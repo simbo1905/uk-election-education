@@ -1,8 +1,2112 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <script>
-   window.EMBEDDED_GAME_DATA = {
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>UK Democracy Education Game</title>
+    
+    <!-- Embedded Question Sets -->
+    <script>
+        window.EMBEDDED_QUESTION_SETS = {
+  "questions_citizenship_level": {
+    "metadata": {
+      "title": "UK Democracy - Citizenship Test Level",
+      "description": "Questions about UK democracy at the level of the official Life in the UK citizenship test",
+      "version": "1.0.0",
+      "targetAge": "18+",
+      "subject": "UK Democracy and Constitutional System"
+    },
+    "questions": [
+      {
+        "id": "c001",
+        "question": "Which TWO of the following are constitutional institutions in the UK?",
+        "choices": [
+          "The monarchy and the civil service",
+          "The armed forces and local newspapers",
+          "Trade unions and pressure groups",
+          "The European Union and Commonwealth"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The constitutional institutions include the monarchy, Parliament, the Prime Minister, the cabinet, the judiciary, the police, the civil service, and local government.",
+        "category": "Constitutional System",
+        "difficulty": "medium",
+        "tags": [
+          "constitution",
+          "institutions",
+          "government"
+        ]
+      },
+      {
+        "id": "c002",
+        "question": "The UK has an 'unwritten' constitution. What does this mean?",
+        "choices": [
+          "There are no laws governing how the country is run",
+          "The constitution is not written down in a single document",
+          "Only the monarch knows what the constitution says",
+          "The constitution changes every year"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Unlike countries like the USA, the UK constitution is not contained in one single document but consists of laws, conventions, and practices that have developed over centuries.",
+        "category": "Constitutional System",
+        "difficulty": "medium",
+        "tags": [
+          "constitution",
+          "unwritten",
+          "legal system"
+        ]
+      },
+      {
+        "id": "c003",
+        "question": "The system of government in the UK is:",
+        "choices": [
+          "A federal republic",
+          "A parliamentary democracy",
+          "A direct democracy",
+          "A presidential system"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The UK has a parliamentary democracy where voters elect MPs to Parliament, and the party with the majority of MPs forms the government.",
+        "category": "Government System",
+        "difficulty": "easy",
+        "tags": [
+          "parliamentary democracy",
+          "government",
+          "system"
+        ]
+      },
+      {
+        "id": "c004",
+        "question": "Which of the following best describes the role of the House of Lords?",
+        "choices": [
+          "It has exactly the same powers as the House of Commons",
+          "It can delay but cannot permanently block most legislation",
+          "It only deals with criminal court cases",
+          "It controls all government spending"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The House of Lords can suggest amendments and delay legislation, but the House of Commons can ultimately overrule it. The Lords cannot permanently block most bills.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "house of lords",
+          "parliament",
+          "legislation"
+        ]
+      },
+      {
+        "id": "c005",
+        "question": "How are most members of the House of Lords appointed?",
+        "choices": [
+          "They are directly elected by the public",
+          "They inherit their positions",
+          "They are appointed by the monarch on the advice of the Prime Minister",
+          "They are chosen by other MPs"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Most peers are life peers appointed by the monarch on the advice of the Prime Minister. Some are also appointed on advice from other party leaders or an independent commission.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "house of lords",
+          "peers",
+          "appointments"
+        ]
+      },
+      {
+        "id": "c006",
+        "question": "Devolution has given Scotland, Wales and Northern Ireland:",
+        "choices": [
+          "Complete independence from the UK",
+          "The power to make laws in certain areas",
+          "The right to leave the UK whenever they want",
+          "Control over UK foreign policy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Devolution has transferred certain powers from Westminster to the Scottish Parliament, Welsh Parliament (Senedd), and Northern Ireland Assembly, but the UK Parliament remains sovereign.",
+        "category": "Devolution",
+        "difficulty": "medium",
+        "tags": [
+          "devolution",
+          "scotland",
+          "wales",
+          "northern ireland"
+        ]
+      },
+      {
+        "id": "c007",
+        "question": "In the UK electoral system, a by-election occurs when:",
+        "choices": [
+          "The Prime Minister calls a general election",
+          "An MP dies or resigns during a Parliament",
+          "A new political party is formed",
+          "The monarch dissolves Parliament"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A by-election is held in a single constituency when the sitting MP dies, resigns, or is disqualified during the term of Parliament.",
+        "category": "Elections",
+        "difficulty": "medium",
+        "tags": [
+          "by-election",
+          "elections",
+          "MP"
+        ]
+      },
+      {
+        "id": "c008",
+        "question": "The Speaker of the House of Commons is:",
+        "choices": [
+          "The leader of the largest political party",
+          "A neutral chair who keeps order during debates",
+          "The monarch's representative in Parliament",
+          "The most senior civil servant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Speaker is an MP chosen by other MPs to chair debates neutrally, ensuring parliamentary rules are followed and opposition parties get fair time to speak.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "speaker",
+          "parliament",
+          "debates"
+        ]
+      },
+      {
+        "id": "c009",
+        "question": "Which of these powers is reserved to the UK government and NOT devolved?",
+        "choices": [
+          "Health policy",
+          "Education policy",
+          "Defence and foreign policy",
+          "Local government"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Defence, foreign policy, immigration, and constitutional matters remain reserved to the UK government. Health and education are largely devolved.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "reserved powers",
+          "devolution",
+          "government"
+        ]
+      },
+      {
+        "id": "c010",
+        "question": "The monarch's role in the UK political system includes:",
+        "choices": [
+          "Making all government policy decisions",
+          "Choosing which party wins elections",
+          "Giving royal assent to make bills into law",
+          "Controlling Parliament's daily business"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The monarch has important ceremonial roles including giving royal assent to bills, but does not make policy decisions. The monarch acts on the advice of government ministers.",
+        "category": "Monarchy",
+        "difficulty": "medium",
+        "tags": [
+          "monarchy",
+          "royal assent",
+          "constitutional role"
+        ]
+      },
+      {
+        "id": "c011",
+        "question": "Under the UK's constitutional monarchy:",
+        "choices": [
+          "The monarch rules the country directly",
+          "The monarch reigns but does not rule",
+          "The monarch only appears on special occasions",
+          "The monarch controls the armed forces personally"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the UK's constitutional monarchy, the monarch is head of state but does not rule. Political power is exercised by elected politicians and appointed officials.",
+        "category": "Monarchy",
+        "difficulty": "medium",
+        "tags": [
+          "constitutional monarchy",
+          "head of state",
+          "political system"
+        ]
+      },
+      {
+        "id": "c012",
+        "question": "Which statement about UK general elections is correct?",
+        "choices": [
+          "They must be held every four years exactly",
+          "They must be held at least every five years",
+          "They can only be held when the monarch agrees",
+          "They are held when opinion polls show a change is needed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "UK general elections must be held at least every five years, though the Prime Minister can call one earlier. The next election must be held by 2029.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "general elections",
+          "timing",
+          "parliament"
+        ]
+      },
+      {
+        "id": "c013",
+        "question": "The Cabinet is:",
+        "choices": [
+          "All Members of Parliament from the governing party",
+          "Senior government ministers chosen by the Prime Minister",
+          "Civil servants who run government departments",
+          "Judges who make legal decisions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Cabinet consists of senior government ministers, usually Secretaries of State, chosen by the Prime Minister to head major government departments.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "cabinet",
+          "ministers",
+          "prime minister"
+        ]
+      },
+      {
+        "id": "c014",
+        "question": "In a UK general election, voters:",
+        "choices": [
+          "Vote directly for the Prime Minister",
+          "Vote for one MP to represent their constituency",
+          "Vote for their preferred political party only",
+          "Vote for multiple candidates in order of preference"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the first-past-the-post system, voters choose one candidate to be their MP. The party with the most MPs usually forms the government and their leader becomes Prime Minister.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "MP",
+          "constituency",
+          "FPTP"
+        ]
+      },
+      {
+        "id": "c015",
+        "question": "Parliamentary sovereignty in the UK means:",
+        "choices": [
+          "The monarch can overrule any law",
+          "Local councils have supreme power",
+          "Parliament is the supreme legal authority",
+          "The courts can overturn any Act of Parliament"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Parliamentary sovereignty is a key principle meaning Parliament is the supreme legal authority in the UK and can make or unmake any law.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "parliamentary sovereignty",
+          "constitution",
+          "legal authority"
+        ]
+      },
+      {
+        "id": "c016",
+        "question": "What is meant by the 'opposition' in Parliament?",
+        "choices": [
+          "MPs who always disagree with everything",
+          "The largest party that is not in government",
+          "Protesters outside Parliament",
+          "Civil servants who work against the government"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The opposition is the largest party not in government, led by the Leader of the Opposition. They scrutinise government policy and offer alternative proposals.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "opposition",
+          "parliament",
+          "government"
+        ]
+      },
+      {
+        "id": "c017",
+        "question": "The principle of 'checks and balances' in the UK system means:",
+        "choices": [
+          "The government balances the budget every year",
+          "Different parts of government limit each other's power",
+          "Elections are held at the same time",
+          "All political parties get equal time on TV"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Checks and balances ensure no single part of government has unlimited power. Parliament checks the executive, the Lords checks the Commons, and courts interpret law.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "checks and balances",
+          "separation of powers",
+          "constitution"
+        ]
+      },
+      {
+        "id": "c018",
+        "question": "A 'hung Parliament' occurs when:",
+        "choices": [
+          "Parliament is dissolved by the monarch",
+          "No party has an overall majority of MPs",
+          "The Prime Minister loses a vote of confidence",
+          "Too many MPs are absent from voting"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A hung Parliament occurs when no single party has more than half the MPs (326 or more). Parties may then form coalitions or minority governments.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "hung parliament",
+          "coalition",
+          "majority"
+        ]
+      }
+    ]
+  },
+  "questions_complete_collection": {
+    "metadata": {
+      "title": "UK Democracy - Complete Collection",
+      "description": "Comprehensive quiz covering all levels from basic to expert knowledge of UK democracy",
+      "version": "1.0.0",
+      "targetAge": "12+",
+      "subject": "UK Democracy - All Levels"
+    },
+    "questions": [
+      {
+        "id": "pm001",
+        "question": "What does 'democracy' mean?",
+        "choices": [
+          "Rule by the richest people",
+          "Rule by the people",
+          "Rule by the military",
+          "Rule by computers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Democracy comes from Greek words meaning 'people power'. In a democracy, the people choose their government by voting.",
+        "category": "Basic Concepts",
+        "difficulty": "easy",
+        "tags": [
+          "democracy",
+          "definition",
+          "basics"
+        ]
+      },
+      {
+        "id": "pm002",
+        "question": "At what age can you currently vote in UK general elections?",
+        "choices": [
+          "16",
+          "17",
+          "18",
+          "21"
+        ],
+        "correctAnswer": 2,
+        "explanation": "You must be 18 to vote in UK general elections, though the government plans to lower this to 16 in the future.",
+        "category": "Voting",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "age",
+          "elections"
+        ]
+      },
+      {
+        "id": "pm003",
+        "question": "How many parts make up the UK Parliament?",
+        "choices": [
+          "Two - House of Commons and House of Lords",
+          "Three - House of Commons, House of Lords, and the Monarch",
+          "Four - including the Prime Minister",
+          "One - just the House of Commons"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The UK Parliament has three parts: the House of Commons (elected MPs), the House of Lords (appointed members), and the Monarch.",
+        "category": "Parliament",
+        "difficulty": "easy",
+        "tags": [
+          "parliament",
+          "structure",
+          "government"
+        ]
+      },
+      {
+        "id": "pm004",
+        "question": "What do we call the person who leads the UK government?",
+        "choices": [
+          "The President",
+          "The Prime Minister",
+          "The King",
+          "The Speaker"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Prime Minister leads the UK government. They are usually the leader of the political party with the most MPs.",
+        "category": "Government",
+        "difficulty": "easy",
+        "tags": [
+          "prime minister",
+          "government",
+          "leader"
+        ]
+      },
+      {
+        "id": "pm005",
+        "question": "How many MPs are there in the House of Commons?",
+        "choices": [
+          "500",
+          "650",
+          "750",
+          "1000"
+        ],
+        "correctAnswer": 1,
+        "explanation": "There are 650 MPs in the House of Commons, each representing a different area of the UK called a constituency.",
+        "category": "Parliament",
+        "difficulty": "easy",
+        "tags": [
+          "MPs",
+          "house of commons",
+          "numbers"
+        ]
+      },
+      {
+        "id": "pm006",
+        "question": "What is the voting system used to elect UK MPs called?",
+        "choices": [
+          "Proportional Representation",
+          "First Past the Post",
+          "Alternative Vote",
+          "Single Transferable Vote"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The UK uses First Past the Post. In each constituency, the candidate with the most votes wins and becomes the MP.",
+        "category": "Elections",
+        "difficulty": "medium",
+        "tags": [
+          "voting system",
+          "elections",
+          "FPTP"
+        ]
+      },
+      {
+        "id": "pm007",
+        "question": "Which of these is a key feature of democracy?",
+        "choices": [
+          "Only rich people can vote",
+          "Elections happen secretly",
+          "Everyone eligible can vote freely",
+          "The government never changes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Democracy means everyone who is eligible can vote freely to choose their representatives. Elections should be fair and open to all.",
+        "category": "Basic Concepts",
+        "difficulty": "easy",
+        "tags": [
+          "democracy",
+          "voting rights",
+          "fairness"
+        ]
+      },
+      {
+        "id": "pm008",
+        "question": "What do MPs do in Parliament?",
+        "choices": [
+          "Only listen to government ministers",
+          "Make laws, represent constituents, and question the government",
+          "Run local schools and hospitals",
+          "Only vote on what the Prime Minister wants"
+        ],
+        "correctAnswer": 1,
+        "explanation": "MPs represent their local area, help make new laws, and question the government to make sure it's doing a good job.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "MPs",
+          "parliament",
+          "representation"
+        ]
+      },
+      {
+        "id": "pm009",
+        "question": "Scotland, Wales and Northern Ireland have their own:",
+        "choices": [
+          "Prime Ministers",
+          "Kings and Queens",
+          "Parliaments or Assemblies with some powers",
+          "Completely separate governments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Scotland, Wales and Northern Ireland have devolved parliaments or assemblies that make decisions on some issues like health and education in their areas.",
+        "category": "Devolution",
+        "difficulty": "medium",
+        "tags": [
+          "devolution",
+          "scotland",
+          "wales",
+          "northern ireland"
+        ]
+      },
+      {
+        "id": "pm010",
+        "question": "What must you show when voting at a polling station?",
+        "choices": [
+          "Nothing at all",
+          "Photo ID",
+          "Just your name",
+          "A driving licence only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since 2023, you must show photo ID when voting in person at elections in England. This includes passports, driving licences, or other accepted forms of photo ID.",
+        "category": "Voting",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "ID",
+          "elections"
+        ]
+      },
+      {
+        "id": "pm011",
+        "question": "The House of Lords members are:",
+        "choices": [
+          "All elected by the people",
+          "Mostly appointed for life",
+          "All members of the Royal Family",
+          "Chosen by lottery"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Most House of Lords members are life peers, appointed by the monarch on advice from the Prime Minister. They are not elected by the public.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "house of lords",
+          "peers",
+          "appointments"
+        ]
+      },
+      {
+        "id": "pm012",
+        "question": "How often must UK general elections be held?",
+        "choices": [
+          "Every 3 years",
+          "Every 4 years",
+          "At least every 5 years",
+          "Every 6 years"
+        ],
+        "correctAnswer": 2,
+        "explanation": "UK general elections must happen at least every 5 years, but the Prime Minister can call one earlier if needed.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "elections",
+          "timing",
+          "frequency"
+        ]
+      },
+      {
+        "id": "pm013",
+        "question": "What is a constituency?",
+        "choices": [
+          "A type of election",
+          "A political party",
+          "An area represented by one MP",
+          "A government department"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A constituency is a geographical area that elects one MP to represent them in the House of Commons. The UK has 650 constituencies.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "constituency",
+          "MPs",
+          "representation"
+        ]
+      },
+      {
+        "id": "pm014",
+        "question": "Who is the current head of state of the UK?",
+        "choices": [
+          "The Prime Minister",
+          "King Charles III",
+          "The Speaker of the House",
+          "The President"
+        ],
+        "correctAnswer": 1,
+        "explanation": "King Charles III is the head of state. The UK is a constitutional monarchy where the monarch is the head of state but the Prime Minister leads the government.",
+        "category": "Government",
+        "difficulty": "easy",
+        "tags": [
+          "monarchy",
+          "head of state",
+          "king"
+        ]
+      },
+      {
+        "id": "pm015",
+        "question": "What happens if no political party wins a majority in an election?",
+        "choices": [
+          "There is another election immediately",
+          "The King chooses the government",
+          "Parties may form a coalition",
+          "The previous government stays forever"
+        ],
+        "correctAnswer": 2,
+        "explanation": "If no party wins a majority (more than half the seats), parties can work together in a coalition to form a government.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "coalition",
+          "government",
+          "majority"
+        ]
+      },
+      {
+        "id": "pm016",
+        "question": "Which TWO of the following are constitutional institutions in the UK?",
+        "choices": [
+          "The monarchy and the civil service",
+          "The armed forces and local newspapers",
+          "Trade unions and pressure groups",
+          "The European Union and Commonwealth"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The constitutional institutions include the monarchy, Parliament, the Prime Minister, the cabinet, the judiciary, the police, the civil service, and local government.",
+        "category": "Constitutional System",
+        "difficulty": "medium",
+        "tags": [
+          "constitution",
+          "institutions",
+          "government"
+        ]
+      },
+      {
+        "id": "pm017",
+        "question": "The UK has an 'unwritten' constitution. What does this mean?",
+        "choices": [
+          "There are no laws governing how the country is run",
+          "The constitution is not written down in a single document",
+          "Only the monarch knows what the constitution says",
+          "The constitution changes every year"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Unlike countries like the USA, the UK constitution is not contained in one single document but consists of laws, conventions, and practices that have developed over centuries.",
+        "category": "Constitutional System",
+        "difficulty": "medium",
+        "tags": [
+          "constitution",
+          "unwritten",
+          "legal system"
+        ]
+      },
+      {
+        "id": "pm018",
+        "question": "The system of government in the UK is:",
+        "choices": [
+          "A federal republic",
+          "A parliamentary democracy",
+          "A direct democracy",
+          "A presidential system"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The UK has a parliamentary democracy where voters elect MPs to Parliament, and the party with the majority of MPs forms the government.",
+        "category": "Government System",
+        "difficulty": "easy",
+        "tags": [
+          "parliamentary democracy",
+          "government",
+          "system"
+        ]
+      },
+      {
+        "id": "pm019",
+        "question": "Which of the following best describes the role of the House of Lords?",
+        "choices": [
+          "It has exactly the same powers as the House of Commons",
+          "It can delay but cannot permanently block most legislation",
+          "It only deals with criminal court cases",
+          "It controls all government spending"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The House of Lords can suggest amendments and delay legislation, but the House of Commons can ultimately overrule it. The Lords cannot permanently block most bills.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "house of lords",
+          "parliament",
+          "legislation"
+        ]
+      },
+      {
+        "id": "pm020",
+        "question": "How are most members of the House of Lords appointed?",
+        "choices": [
+          "They are directly elected by the public",
+          "They inherit their positions",
+          "They are appointed by the monarch on the advice of the Prime Minister",
+          "They are chosen by other MPs"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Most peers are life peers appointed by the monarch on the advice of the Prime Minister. Some are also appointed on advice from other party leaders or an independent commission.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "house of lords",
+          "peers",
+          "appointments"
+        ]
+      },
+      {
+        "id": "pm021",
+        "question": "Devolution has given Scotland, Wales and Northern Ireland:",
+        "choices": [
+          "Complete independence from the UK",
+          "The power to make laws in certain areas",
+          "The right to leave the UK whenever they want",
+          "Control over UK foreign policy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Devolution has transferred certain powers from Westminster to the Scottish Parliament, Welsh Parliament (Senedd), and Northern Ireland Assembly, but the UK Parliament remains sovereign.",
+        "category": "Devolution",
+        "difficulty": "medium",
+        "tags": [
+          "devolution",
+          "scotland",
+          "wales",
+          "northern ireland"
+        ]
+      },
+      {
+        "id": "pm022",
+        "question": "In the UK electoral system, a by-election occurs when:",
+        "choices": [
+          "The Prime Minister calls a general election",
+          "An MP dies or resigns during a Parliament",
+          "A new political party is formed",
+          "The monarch dissolves Parliament"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A by-election is held in a single constituency when the sitting MP dies, resigns, or is disqualified during the term of Parliament.",
+        "category": "Elections",
+        "difficulty": "medium",
+        "tags": [
+          "by-election",
+          "elections",
+          "MP"
+        ]
+      },
+      {
+        "id": "pm023",
+        "question": "The Speaker of the House of Commons is:",
+        "choices": [
+          "The leader of the largest political party",
+          "A neutral chair who keeps order during debates",
+          "The monarch's representative in Parliament",
+          "The most senior civil servant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Speaker is an MP chosen by other MPs to chair debates neutrally, ensuring parliamentary rules are followed and opposition parties get fair time to speak.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "speaker",
+          "parliament",
+          "debates"
+        ]
+      },
+      {
+        "id": "pm024",
+        "question": "Which of these powers is reserved to the UK government and NOT devolved?",
+        "choices": [
+          "Health policy",
+          "Education policy",
+          "Defence and foreign policy",
+          "Local government"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Defence, foreign policy, immigration, and constitutional matters remain reserved to the UK government. Health and education are largely devolved.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "reserved powers",
+          "devolution",
+          "government"
+        ]
+      },
+      {
+        "id": "pm025",
+        "question": "The monarch's role in the UK political system includes:",
+        "choices": [
+          "Making all government policy decisions",
+          "Choosing which party wins elections",
+          "Giving royal assent to make bills into law",
+          "Controlling Parliament's daily business"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The monarch has important ceremonial roles including giving royal assent to bills, but does not make policy decisions. The monarch acts on the advice of government ministers.",
+        "category": "Monarchy",
+        "difficulty": "medium",
+        "tags": [
+          "monarchy",
+          "royal assent",
+          "constitutional role"
+        ]
+      },
+      {
+        "id": "pm026",
+        "question": "Under the UK's constitutional monarchy:",
+        "choices": [
+          "The monarch rules the country directly",
+          "The monarch reigns but does not rule",
+          "The monarch only appears on special occasions",
+          "The monarch controls the armed forces personally"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the UK's constitutional monarchy, the monarch is head of state but does not rule. Political power is exercised by elected politicians and appointed officials.",
+        "category": "Monarchy",
+        "difficulty": "medium",
+        "tags": [
+          "constitutional monarchy",
+          "head of state",
+          "political system"
+        ]
+      },
+      {
+        "id": "pm027",
+        "question": "Which statement about UK general elections is correct?",
+        "choices": [
+          "They must be held every four years exactly",
+          "They must be held at least every five years",
+          "They can only be held when the monarch agrees",
+          "They are held when opinion polls show a change is needed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "UK general elections must be held at least every five years, though the Prime Minister can call one earlier. The next election must be held by 2029.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "general elections",
+          "timing",
+          "parliament"
+        ]
+      },
+      {
+        "id": "pm028",
+        "question": "The Cabinet is:",
+        "choices": [
+          "All Members of Parliament from the governing party",
+          "Senior government ministers chosen by the Prime Minister",
+          "Civil servants who run government departments",
+          "Judges who make legal decisions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Cabinet consists of senior government ministers, usually Secretaries of State, chosen by the Prime Minister to head major government departments.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "cabinet",
+          "ministers",
+          "prime minister"
+        ]
+      },
+      {
+        "id": "pm029",
+        "question": "In a UK general election, voters:",
+        "choices": [
+          "Vote directly for the Prime Minister",
+          "Vote for one MP to represent their constituency",
+          "Vote for their preferred political party only",
+          "Vote for multiple candidates in order of preference"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the first-past-the-post system, voters choose one candidate to be their MP. The party with the most MPs usually forms the government and their leader becomes Prime Minister.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "MP",
+          "constituency",
+          "FPTP"
+        ]
+      },
+      {
+        "id": "pm030",
+        "question": "Parliamentary sovereignty in the UK means:",
+        "choices": [
+          "The monarch can overrule any law",
+          "Local councils have supreme power",
+          "Parliament is the supreme legal authority",
+          "The courts can overturn any Act of Parliament"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Parliamentary sovereignty is a key principle meaning Parliament is the supreme legal authority in the UK and can make or unmake any law.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "parliamentary sovereignty",
+          "constitution",
+          "legal authority"
+        ]
+      },
+      {
+        "id": "pm031",
+        "question": "What is meant by the 'opposition' in Parliament?",
+        "choices": [
+          "MPs who always disagree with everything",
+          "The largest party that is not in government",
+          "Protesters outside Parliament",
+          "Civil servants who work against the government"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The opposition is the largest party not in government, led by the Leader of the Opposition. They scrutinise government policy and offer alternative proposals.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "opposition",
+          "parliament",
+          "government"
+        ]
+      },
+      {
+        "id": "pm032",
+        "question": "The principle of 'checks and balances' in the UK system means:",
+        "choices": [
+          "The government balances the budget every year",
+          "Different parts of government limit each other's power",
+          "Elections are held at the same time",
+          "All political parties get equal time on TV"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Checks and balances ensure no single part of government has unlimited power. Parliament checks the executive, the Lords checks the Commons, and courts interpret law.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "checks and balances",
+          "separation of powers",
+          "constitution"
+        ]
+      },
+      {
+        "id": "pm033",
+        "question": "A 'hung Parliament' occurs when:",
+        "choices": [
+          "Parliament is dissolved by the monarch",
+          "No party has an overall majority of MPs",
+          "The Prime Minister loses a vote of confidence",
+          "Too many MPs are absent from voting"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A hung Parliament occurs when no single party has more than half the MPs (326 or more). Parties may then form coalitions or minority governments.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "hung parliament",
+          "coalition",
+          "majority"
+        ]
+      },
+      {
+        "id": "pm034",
+        "question": "Which of the following accurately describes the Salisbury Convention?",
+        "choices": [
+          "The House of Lords should not reject legislation promised in the government's election manifesto",
+          "The Prime Minister must consult Cabinet before dissolving Parliament",
+          "All bills must be read three times in each House",
+          "The monarch cannot refuse royal assent to any bill"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Salisbury Convention is an important constitutional convention that the House of Lords should not oppose bills implementing the governing party's election manifesto commitments.",
+        "category": "Constitutional Conventions",
+        "difficulty": "hard",
+        "tags": [
+          "salisbury convention",
+          "house of lords",
+          "manifesto"
+        ]
+      },
+      {
+        "id": "pm035",
+        "question": "The 'West Lothian Question' refers to:",
+        "choices": [
+          "Whether Scottish MPs can vote on England-only matters at Westminster",
+          "The boundary disputes between England and Scotland",
+          "The right of Scottish Parliament to override UK law",
+          "The method of electing Scottish MPs to Westminster"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The West Lothian Question asks whether it's fair for Scottish MPs to vote on England-only matters when English MPs cannot vote on devolved Scottish matters.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "west lothian question",
+          "devolution",
+          "scottish MPs"
+        ]
+      },
+      {
+        "id": "pm036",
+        "question": "Under the current rules, how many hereditary peers can sit in the House of Lords?",
+        "choices": [
+          "None - all hereditary peers were removed",
+          "92 hereditary peers",
+          "Any number if they are elected",
+          "Only those who also hold life peerages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since the House of Lords Act 1999, only 92 hereditary peers can remain: 90 elected by their fellow hereditary peers plus the Earl Marshal and Lord Great Chamberlain.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "hereditary peers",
+          "house of lords",
+          "1999 reform"
+        ]
+      },
+      {
+        "id": "pm037",
+        "question": "The 'payroll vote' in the House of Commons refers to:",
+        "choices": [
+          "MPs voting on their own salaries",
+          "Government ministers and parliamentary private secretaries who usually support the government",
+          "MPs who are paid by lobby groups",
+          "The final vote on the annual budget"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The payroll vote consists of government ministers and parliamentary private secretaries (around 140 MPs) who are expected to support government policy or resign.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "payroll vote",
+          "government ministers",
+          "loyalty"
+        ]
+      },
+      {
+        "id": "pm038",
+        "question": "Which voting system is used for electing the London Assembly?",
+        "choices": [
+          "First Past the Post throughout",
+          "Single Transferable Vote",
+          "Additional Member System",
+          "Alternative Vote Plus"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The London Assembly uses the Additional Member System with 14 constituency members (FPTP) and 11 London-wide members (proportional representation).",
+        "category": "Elections",
+        "difficulty": "hard",
+        "tags": [
+          "london assembly",
+          "AMS",
+          "voting systems"
+        ]
+      },
+      {
+        "id": "pm039",
+        "question": "The Barnett Formula determines:",
+        "choices": [
+          "How constituency boundaries are drawn",
+          "How public spending is allocated between UK nations",
+          "The number of peers in the House of Lords",
+          "When general elections must be held"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Barnett Formula is used to calculate the annual adjustments to public spending allocated to Scotland, Wales and Northern Ireland relative to England.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "barnett formula",
+          "public spending",
+          "devolution"
+        ]
+      },
+      {
+        "id": "pm040",
+        "question": "Under the Fixed-term Parliaments Act 2011 (now repealed), early elections could be triggered by:",
+        "choices": [
+          "A simple majority vote of MPs",
+          "Two-thirds of all MPs voting for dissolution",
+          "The Prime Minister requesting the monarch",
+          "A referendum on early dissolution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Act required either a two-thirds majority of all MPs or a successful motion of no confidence followed by 14 days without a new government being formed.",
+        "category": "Elections",
+        "difficulty": "hard",
+        "tags": [
+          "FTPA",
+          "early elections",
+          "supermajority"
+        ]
+      },
+      {
+        "id": "pm041",
+        "question": "The role of the Lord Privy Seal is:",
+        "choices": [
+          "To control access to the Royal Seal",
+          "A senior Cabinet position often without specific departmental duties",
+          "To oversee the House of Lords",
+          "To advise the monarch on constitutional matters"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Lord Privy Seal is typically a senior Cabinet minister without specific departmental responsibilities, often taking on coordinating roles across government.",
+        "category": "Government",
+        "difficulty": "hard",
+        "tags": [
+          "lord privy seal",
+          "cabinet",
+          "sinecure"
+        ]
+      },
+      {
+        "id": "pm042",
+        "question": "What is meant by 'collective ministerial responsibility'?",
+        "choices": [
+          "All ministers share responsibility for government policy publicly",
+          "Ministers can only be dismissed together",
+          "Cabinet decisions must be unanimous",
+          "All ministers must come from the same political party"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Collective responsibility means all ministers must publicly support government policy, even if they disagreed in private, or else resign from government.",
+        "category": "Government",
+        "difficulty": "hard",
+        "tags": [
+          "collective responsibility",
+          "cabinet",
+          "ministerial responsibility"
+        ]
+      },
+      {
+        "id": "pm043",
+        "question": "The English Votes for English Laws (EVEL) procedure was designed to:",
+        "choices": [
+          "Prevent Scottish MPs voting on England-only legislation",
+          "Create a separate English Parliament",
+          "Give English regions more autonomy",
+          "Reduce the number of English constituencies"
+        ],
+        "correctAnswer": 0,
+        "explanation": "EVEL (2015-2021) gave English (or English and Welsh) MPs a decisive say over legislation affecting only England, addressing the West Lothian Question partially.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "EVEL",
+          "english votes",
+          "devolution"
+        ]
+      },
+      {
+        "id": "pm044",
+        "question": "A 'money bill' in the UK Parliament is:",
+        "choices": [
+          "Any bill involving government spending",
+          "A bill certified by the Speaker as dealing only with taxation or public money",
+          "The annual Budget bill only",
+          "Any bill that affects the Bank of England"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A money bill must be certified by the Speaker as dealing only with specified financial matters. The House of Lords can only delay it for one month.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "money bills",
+          "speaker certificate",
+          "house of lords"
+        ]
+      },
+      {
+        "id": "pm045",
+        "question": "The 'Sewell Convention' states that:",
+        "choices": [
+          "The UK Parliament will not normally legislate on devolved matters without consent",
+          "Scottish law takes precedence over UK law in Scotland",
+          "The Scottish Parliament cannot be dissolved without consent",
+          "Scottish ministers must attend UK Cabinet meetings"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Sewell Convention holds that the UK Parliament will not normally legislate on devolved matters without the consent of the relevant devolved legislature.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "sewell convention",
+          "legislative consent",
+          "devolution"
+        ]
+      },
+      {
+        "id": "pm046",
+        "question": "Which principle prevents the courts from questioning proceedings in Parliament?",
+        "choices": [
+          "Parliamentary sovereignty",
+          "Parliamentary privilege",
+          "Collective responsibility",
+          "The separation of powers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Parliamentary privilege protects freedom of speech in Parliament and prevents courts from questioning what is said or done in parliamentary proceedings.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "parliamentary privilege",
+          "freedom of speech",
+          "separation of powers"
+        ]
+      },
+      {
+        "id": "pm047",
+        "question": "The Constitutional Reform Act 2005 created:",
+        "choices": [
+          "The Scottish Parliament",
+          "The Supreme Court and reformed the Lord Chancellor's role",
+          "The Barnett Formula",
+          "The Fixed-term Parliaments Act"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Act created the UK Supreme Court, transferred judicial functions from the House of Lords, and reduced the Lord Chancellor's judicial powers to improve separation of powers.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "constitutional reform act",
+          "supreme court",
+          "separation of powers"
+        ]
+      },
+      {
+        "id": "pm048",
+        "question": "A 'statutory instrument' is:",
+        "choices": [
+          "A type of Act of Parliament",
+          "Secondary legislation made under powers granted by primary legislation",
+          "A legal document signed by the monarch",
+          "A court order interpreting the law"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Statutory instruments are secondary legislation allowing ministers to make detailed regulations under powers granted by Acts of Parliament, avoiding the need for new primary legislation.",
+        "category": "Legislative Process",
+        "difficulty": "hard",
+        "tags": [
+          "statutory instruments",
+          "secondary legislation",
+          "delegated powers"
+        ]
+      },
+      {
+        "id": "pm049",
+        "question": "Which of these can dissolve Parliament?",
+        "choices": [
+          "The Speaker of the House of Commons",
+          "The monarch (in practice, on advice of the Prime Minister)",
+          "The House of Lords",
+          "The Supreme Court"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The monarch has the power to dissolve Parliament, but in practice does so on the advice of the Prime Minister.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "dissolution",
+          "parliament",
+          "monarchy",
+          "prime minister"
+        ]
+      },
+      {
+        "id": "pm050",
+        "question": "What is the main difference between devolved and reserved powers?",
+        "choices": [
+          "Devolved powers belong to local councils, reserved to national government",
+          "Devolved powers are transferred to Scotland/Wales/NI, reserved remain with UK government",
+          "Devolved powers can be changed, reserved powers cannot",
+          "There is no difference - all powers are the same"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Devolved powers have been transferred to the Scottish Parliament, Welsh Parliament, and Northern Ireland Assembly. Reserved powers remain with the UK government and Parliament.",
+        "category": "Devolution",
+        "difficulty": "medium",
+        "tags": [
+          "devolution",
+          "reserved powers",
+          "government"
+        ]
+      },
+      {
+        "id": "pm051",
+        "question": "What role does the Electoral Commission play?",
+        "choices": [
+          "It runs all elections in the UK",
+          "It oversees elections and regulates political parties and campaign spending",
+          "It decides who can vote in elections",
+          "It chooses the dates of general elections"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Electoral Commission is an independent body that oversees elections, regulates political parties, monitors campaign spending, and ensures electoral law is followed.",
+        "category": "Elections",
+        "difficulty": "medium",
+        "tags": [
+          "electoral commission",
+          "elections",
+          "regulation"
+        ]
+      },
+      {
+        "id": "pm052",
+        "question": "In the UK political system, what is meant by 'Question Time'?",
+        "choices": [
+          "A TV quiz show about politics",
+          "When MPs can ask questions of government ministers in Parliament",
+          "Time allocated for opposition speeches",
+          "The period before voting begins"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Question Time (including Prime Minister's Questions) allows MPs to question government ministers, helping Parliament hold the government accountable.",
+        "category": "Parliament",
+        "difficulty": "easy",
+        "tags": [
+          "question time",
+          "accountability",
+          "parliament"
+        ]
+      },
+      {
+        "id": "pm053",
+        "question": "Which of these is an example of a 'constitutional convention'?",
+        "choices": [
+          "The monarch must give royal assent to all bills passed by Parliament",
+          "Elections must be held every five years exactly",
+          "All Cabinet ministers must be MPs",
+          "The House of Lords has exactly 800 members"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Royal assent to bills is a constitutional convention - an unwritten rule followed by tradition. The monarch could theoretically refuse but never does in practice.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "constitutional convention",
+          "royal assent",
+          "monarchy"
+        ]
+      }
+    ]
+  },
+  "questions": {
+    "metadata": {
+      "title": "UK Democracy Basics",
+      "description": "Fundamental concepts about democracy and the UK political system",
+      "version": "1.0.0",
+      "targetAge": "12+",
+      "subject": "UK Politics and Democracy"
+    },
+    "questions": [
+      {
+        "id": "q001",
+        "question": "What does 'democracy' mean?",
+        "choices": [
+          "Rule by the richest people",
+          "Rule by the people",
+          "Rule by the oldest person",
+          "Rule by the strongest person"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Democracy comes from the Greek words 'demos' (people) and 'kratos' (power/rule). It means that the people have the power to choose their government through voting.",
+        "category": "Basic Concepts",
+        "difficulty": "easy",
+        "tags": [
+          "democracy",
+          "definition",
+          "basics"
+        ]
+      },
+      {
+        "id": "q002",
+        "question": "At what age can you vote in UK general elections?",
+        "choices": [
+          "16",
+          "17",
+          "18",
+          "21"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the UK, you must be 18 or over to vote in general elections. However, you can register to vote when you're 16 or 17 so you're ready when you turn 18.",
+        "category": "Voting",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "age",
+          "elections"
+        ]
+      },
+      {
+        "id": "q003",
+        "question": "How often are UK general elections held?",
+        "choices": [
+          "Every 3 years",
+          "Every 4 years",
+          "At least every 5 years",
+          "Every 6 years"
+        ],
+        "correctAnswer": 2,
+        "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier.",
+        "category": "Elections",
+        "difficulty": "medium",
+        "tags": [
+          "elections",
+          "timing",
+          "parliament"
+        ]
+      },
+      {
+        "id": "q004",
+        "question": "What is the name of the UK Parliament building?",
+        "choices": [
+          "Westminster Palace",
+          "Buckingham Palace",
+          "The Houses of Parliament",
+          "Number 10 Downing Street"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The UK Parliament meets in the Houses of Parliament (also called the Palace of Westminster) in London. It contains both the House of Commons and the House of Lords.",
+        "category": "Institutions",
+        "difficulty": "easy",
+        "tags": [
+          "parliament",
+          "buildings",
+          "london"
+        ]
+      },
+      {
+        "id": "q005",
+        "question": "Which of these is NOT a key feature of democracy?",
+        "choices": [
+          "Free and fair elections",
+          "Freedom of speech",
+          "Rule by one person forever",
+          "Protection of minority rights"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Democracy requires regular elections where power can change hands. Rule by one person forever (dictatorship) is the opposite of democracy, which depends on the people's ability to choose and change their leaders.",
+        "category": "Basic Concepts",
+        "difficulty": "medium",
+        "tags": [
+          "democracy",
+          "features",
+          "dictatorship"
+        ]
+      },
+      {
+        "id": "q006",
+        "question": "What is the role of MPs (Members of Parliament)?",
+        "choices": [
+          "To represent their local area in Parliament",
+          "To judge court cases",
+          "To run hospitals",
+          "To teach in schools"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MPs represent the people in their local area (constituency) in the House of Commons. They debate laws, vote on government policies, and speak up for their constituents' concerns.",
+        "category": "Representatives",
+        "difficulty": "easy",
+        "tags": [
+          "MPs",
+          "representation",
+          "constituency"
+        ]
+      }
+    ]
+  },
+  "questions_kids_12plus": {
+    "metadata": {
+      "title": "UK Democracy for Young Citizens",
+      "description": "Simple, clear questions about UK democracy for children aged 12+",
+      "version": "1.0.0",
+      "targetAge": "12+",
+      "subject": "UK Democracy and Government"
+    },
+    "questions": [
+      {
+        "id": "k001",
+        "question": "What does 'democracy' mean?",
+        "choices": [
+          "Rule by the richest people",
+          "Rule by the people",
+          "Rule by the military",
+          "Rule by computers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Democracy comes from Greek words meaning 'people power'. In a democracy, the people choose their government by voting.",
+        "category": "Basic Concepts",
+        "difficulty": "easy",
+        "tags": [
+          "democracy",
+          "definition",
+          "basics"
+        ]
+      },
+      {
+        "id": "k002",
+        "question": "At what age can you currently vote in UK general elections?",
+        "choices": [
+          "16",
+          "17",
+          "18",
+          "21"
+        ],
+        "correctAnswer": 2,
+        "explanation": "You must be 18 to vote in UK general elections, though the government plans to lower this to 16 in the future.",
+        "category": "Voting",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "age",
+          "elections"
+        ]
+      },
+      {
+        "id": "k003",
+        "question": "How many parts make up the UK Parliament?",
+        "choices": [
+          "Two - House of Commons and House of Lords",
+          "Three - House of Commons, House of Lords, and the Monarch",
+          "Four - including the Prime Minister",
+          "One - just the House of Commons"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The UK Parliament has three parts: the House of Commons (elected MPs), the House of Lords (appointed members), and the Monarch.",
+        "category": "Parliament",
+        "difficulty": "easy",
+        "tags": [
+          "parliament",
+          "structure",
+          "government"
+        ]
+      },
+      {
+        "id": "k004",
+        "question": "What do we call the person who leads the UK government?",
+        "choices": [
+          "The President",
+          "The Prime Minister",
+          "The King",
+          "The Speaker"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Prime Minister leads the UK government. They are usually the leader of the political party with the most MPs.",
+        "category": "Government",
+        "difficulty": "easy",
+        "tags": [
+          "prime minister",
+          "government",
+          "leader"
+        ]
+      },
+      {
+        "id": "k005",
+        "question": "How many MPs are there in the House of Commons?",
+        "choices": [
+          "500",
+          "650",
+          "750",
+          "1000"
+        ],
+        "correctAnswer": 1,
+        "explanation": "There are 650 MPs in the House of Commons, each representing a different area of the UK called a constituency.",
+        "category": "Parliament",
+        "difficulty": "easy",
+        "tags": [
+          "MPs",
+          "house of commons",
+          "numbers"
+        ]
+      },
+      {
+        "id": "k006",
+        "question": "What is the voting system used to elect UK MPs called?",
+        "choices": [
+          "Proportional Representation",
+          "First Past the Post",
+          "Alternative Vote",
+          "Single Transferable Vote"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The UK uses First Past the Post. In each constituency, the candidate with the most votes wins and becomes the MP.",
+        "category": "Elections",
+        "difficulty": "medium",
+        "tags": [
+          "voting system",
+          "elections",
+          "FPTP"
+        ]
+      },
+      {
+        "id": "k007",
+        "question": "Which of these is a key feature of democracy?",
+        "choices": [
+          "Only rich people can vote",
+          "Elections happen secretly",
+          "Everyone eligible can vote freely",
+          "The government never changes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Democracy means everyone who is eligible can vote freely to choose their representatives. Elections should be fair and open to all.",
+        "category": "Basic Concepts",
+        "difficulty": "easy",
+        "tags": [
+          "democracy",
+          "voting rights",
+          "fairness"
+        ]
+      },
+      {
+        "id": "k008",
+        "question": "What do MPs do in Parliament?",
+        "choices": [
+          "Only listen to government ministers",
+          "Make laws, represent constituents, and question the government",
+          "Run local schools and hospitals",
+          "Only vote on what the Prime Minister wants"
+        ],
+        "correctAnswer": 1,
+        "explanation": "MPs represent their local area, help make new laws, and question the government to make sure it's doing a good job.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "MPs",
+          "parliament",
+          "representation"
+        ]
+      },
+      {
+        "id": "k009",
+        "question": "Scotland, Wales and Northern Ireland have their own:",
+        "choices": [
+          "Prime Ministers",
+          "Kings and Queens",
+          "Parliaments or Assemblies with some powers",
+          "Completely separate governments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Scotland, Wales and Northern Ireland have devolved parliaments or assemblies that make decisions on some issues like health and education in their areas.",
+        "category": "Devolution",
+        "difficulty": "medium",
+        "tags": [
+          "devolution",
+          "scotland",
+          "wales",
+          "northern ireland"
+        ]
+      },
+      {
+        "id": "k010",
+        "question": "What must you show when voting at a polling station?",
+        "choices": [
+          "Nothing at all",
+          "Photo ID",
+          "Just your name",
+          "A driving licence only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since 2023, you must show photo ID when voting in person at elections in England. This includes passports, driving licences, or other accepted forms of photo ID.",
+        "category": "Voting",
+        "difficulty": "easy",
+        "tags": [
+          "voting",
+          "ID",
+          "elections"
+        ]
+      },
+      {
+        "id": "k011",
+        "question": "The House of Lords members are:",
+        "choices": [
+          "All elected by the people",
+          "Mostly appointed for life",
+          "All members of the Royal Family",
+          "Chosen by lottery"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Most House of Lords members are life peers, appointed by the monarch on advice from the Prime Minister. They are not elected by the public.",
+        "category": "Parliament",
+        "difficulty": "medium",
+        "tags": [
+          "house of lords",
+          "peers",
+          "appointments"
+        ]
+      },
+      {
+        "id": "k012",
+        "question": "How often must UK general elections be held?",
+        "choices": [
+          "Every 3 years",
+          "Every 4 years",
+          "At least every 5 years",
+          "Every 6 years"
+        ],
+        "correctAnswer": 2,
+        "explanation": "UK general elections must happen at least every 5 years, but the Prime Minister can call one earlier if needed.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "elections",
+          "timing",
+          "frequency"
+        ]
+      },
+      {
+        "id": "k013",
+        "question": "What is a constituency?",
+        "choices": [
+          "A type of election",
+          "A political party",
+          "An area represented by one MP",
+          "A government department"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A constituency is a geographical area that elects one MP to represent them in the House of Commons. The UK has 650 constituencies.",
+        "category": "Elections",
+        "difficulty": "easy",
+        "tags": [
+          "constituency",
+          "MPs",
+          "representation"
+        ]
+      },
+      {
+        "id": "k014",
+        "question": "Who is the current head of state of the UK?",
+        "choices": [
+          "The Prime Minister",
+          "King Charles III",
+          "The Speaker of the House",
+          "The President"
+        ],
+        "correctAnswer": 1,
+        "explanation": "King Charles III is the head of state. The UK is a constitutional monarchy where the monarch is the head of state but the Prime Minister leads the government.",
+        "category": "Government",
+        "difficulty": "easy",
+        "tags": [
+          "monarchy",
+          "head of state",
+          "king"
+        ]
+      },
+      {
+        "id": "k015",
+        "question": "What happens if no political party wins a majority in an election?",
+        "choices": [
+          "There is another election immediately",
+          "The King chooses the government",
+          "Parties may form a coalition",
+          "The previous government stays forever"
+        ],
+        "correctAnswer": 2,
+        "explanation": "If no party wins a majority (more than half the seats), parties can work together in a coalition to form a government.",
+        "category": "Government",
+        "difficulty": "medium",
+        "tags": [
+          "coalition",
+          "government",
+          "majority"
+        ]
+      }
+    ]
+  },
+  "questions_expert_level": {
+    "metadata": {
+      "title": "UK Democracy - Expert Challenge",
+      "description": "Challenging questions about UK democracy designed to test detailed knowledge",
+      "version": "1.0.0",
+      "targetAge": "16+",
+      "subject": "Advanced UK Democracy and Government"
+    },
+    "questions": [
+      {
+        "id": "t001",
+        "question": "Which of the following accurately describes the Salisbury Convention?",
+        "choices": [
+          "The House of Lords should not reject legislation promised in the government's election manifesto",
+          "The Prime Minister must consult Cabinet before dissolving Parliament",
+          "All bills must be read three times in each House",
+          "The monarch cannot refuse royal assent to any bill"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Salisbury Convention is an important constitutional convention that the House of Lords should not oppose bills implementing the governing party's election manifesto commitments.",
+        "category": "Constitutional Conventions",
+        "difficulty": "hard",
+        "tags": [
+          "salisbury convention",
+          "house of lords",
+          "manifesto"
+        ]
+      },
+      {
+        "id": "t002",
+        "question": "The 'West Lothian Question' refers to:",
+        "choices": [
+          "Whether Scottish MPs can vote on England-only matters at Westminster",
+          "The boundary disputes between England and Scotland",
+          "The right of Scottish Parliament to override UK law",
+          "The method of electing Scottish MPs to Westminster"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The West Lothian Question asks whether it's fair for Scottish MPs to vote on England-only matters when English MPs cannot vote on devolved Scottish matters.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "west lothian question",
+          "devolution",
+          "scottish MPs"
+        ]
+      },
+      {
+        "id": "t003",
+        "question": "Under the current rules, how many hereditary peers can sit in the House of Lords?",
+        "choices": [
+          "None - all hereditary peers were removed",
+          "92 hereditary peers",
+          "Any number if they are elected",
+          "Only those who also hold life peerages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since the House of Lords Act 1999, only 92 hereditary peers can remain: 90 elected by their fellow hereditary peers plus the Earl Marshal and Lord Great Chamberlain.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "hereditary peers",
+          "house of lords",
+          "1999 reform"
+        ]
+      },
+      {
+        "id": "t004",
+        "question": "The 'payroll vote' in the House of Commons refers to:",
+        "choices": [
+          "MPs voting on their own salaries",
+          "Government ministers and parliamentary private secretaries who usually support the government",
+          "MPs who are paid by lobby groups",
+          "The final vote on the annual budget"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The payroll vote consists of government ministers and parliamentary private secretaries (around 140 MPs) who are expected to support government policy or resign.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "payroll vote",
+          "government ministers",
+          "loyalty"
+        ]
+      },
+      {
+        "id": "t005",
+        "question": "Which voting system is used for electing the London Assembly?",
+        "choices": [
+          "First Past the Post throughout",
+          "Single Transferable Vote",
+          "Additional Member System",
+          "Alternative Vote Plus"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The London Assembly uses the Additional Member System with 14 constituency members (FPTP) and 11 London-wide members (proportional representation).",
+        "category": "Elections",
+        "difficulty": "hard",
+        "tags": [
+          "london assembly",
+          "AMS",
+          "voting systems"
+        ]
+      },
+      {
+        "id": "t006",
+        "question": "The Barnett Formula determines:",
+        "choices": [
+          "How constituency boundaries are drawn",
+          "How public spending is allocated between UK nations",
+          "The number of peers in the House of Lords",
+          "When general elections must be held"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Barnett Formula is used to calculate the annual adjustments to public spending allocated to Scotland, Wales and Northern Ireland relative to England.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "barnett formula",
+          "public spending",
+          "devolution"
+        ]
+      },
+      {
+        "id": "t007",
+        "question": "Under the Fixed-term Parliaments Act 2011 (now repealed), early elections could be triggered by:",
+        "choices": [
+          "A simple majority vote of MPs",
+          "Two-thirds of all MPs voting for dissolution",
+          "The Prime Minister requesting the monarch",
+          "A referendum on early dissolution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Act required either a two-thirds majority of all MPs or a successful motion of no confidence followed by 14 days without a new government being formed.",
+        "category": "Elections",
+        "difficulty": "hard",
+        "tags": [
+          "FTPA",
+          "early elections",
+          "supermajority"
+        ]
+      },
+      {
+        "id": "t008",
+        "question": "The role of the Lord Privy Seal is:",
+        "choices": [
+          "To control access to the Royal Seal",
+          "A senior Cabinet position often without specific departmental duties",
+          "To oversee the House of Lords",
+          "To advise the monarch on constitutional matters"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Lord Privy Seal is typically a senior Cabinet minister without specific departmental responsibilities, often taking on coordinating roles across government.",
+        "category": "Government",
+        "difficulty": "hard",
+        "tags": [
+          "lord privy seal",
+          "cabinet",
+          "sinecure"
+        ]
+      },
+      {
+        "id": "t009",
+        "question": "What is meant by 'collective ministerial responsibility'?",
+        "choices": [
+          "All ministers share responsibility for government policy publicly",
+          "Ministers can only be dismissed together",
+          "Cabinet decisions must be unanimous",
+          "All ministers must come from the same political party"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Collective responsibility means all ministers must publicly support government policy, even if they disagreed in private, or else resign from government.",
+        "category": "Government",
+        "difficulty": "hard",
+        "tags": [
+          "collective responsibility",
+          "cabinet",
+          "ministerial responsibility"
+        ]
+      },
+      {
+        "id": "t010",
+        "question": "The English Votes for English Laws (EVEL) procedure was designed to:",
+        "choices": [
+          "Prevent Scottish MPs voting on England-only legislation",
+          "Create a separate English Parliament",
+          "Give English regions more autonomy",
+          "Reduce the number of English constituencies"
+        ],
+        "correctAnswer": 0,
+        "explanation": "EVEL (2015-2021) gave English (or English and Welsh) MPs a decisive say over legislation affecting only England, addressing the West Lothian Question partially.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "EVEL",
+          "english votes",
+          "devolution"
+        ]
+      },
+      {
+        "id": "t011",
+        "question": "A 'money bill' in the UK Parliament is:",
+        "choices": [
+          "Any bill involving government spending",
+          "A bill certified by the Speaker as dealing only with taxation or public money",
+          "The annual Budget bill only",
+          "Any bill that affects the Bank of England"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A money bill must be certified by the Speaker as dealing only with specified financial matters. The House of Lords can only delay it for one month.",
+        "category": "Parliament",
+        "difficulty": "hard",
+        "tags": [
+          "money bills",
+          "speaker certificate",
+          "house of lords"
+        ]
+      },
+      {
+        "id": "t012",
+        "question": "The 'Sewell Convention' states that:",
+        "choices": [
+          "The UK Parliament will not normally legislate on devolved matters without consent",
+          "Scottish law takes precedence over UK law in Scotland",
+          "The Scottish Parliament cannot be dissolved without consent",
+          "Scottish ministers must attend UK Cabinet meetings"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Sewell Convention holds that the UK Parliament will not normally legislate on devolved matters without the consent of the relevant devolved legislature.",
+        "category": "Devolution",
+        "difficulty": "hard",
+        "tags": [
+          "sewell convention",
+          "legislative consent",
+          "devolution"
+        ]
+      },
+      {
+        "id": "t013",
+        "question": "Which principle prevents the courts from questioning proceedings in Parliament?",
+        "choices": [
+          "Parliamentary sovereignty",
+          "Parliamentary privilege",
+          "Collective responsibility",
+          "The separation of powers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Parliamentary privilege protects freedom of speech in Parliament and prevents courts from questioning what is said or done in parliamentary proceedings.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "parliamentary privilege",
+          "freedom of speech",
+          "separation of powers"
+        ]
+      },
+      {
+        "id": "t014",
+        "question": "The Constitutional Reform Act 2005 created:",
+        "choices": [
+          "The Scottish Parliament",
+          "The Supreme Court and reformed the Lord Chancellor's role",
+          "The Barnett Formula",
+          "The Fixed-term Parliaments Act"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Act created the UK Supreme Court, transferred judicial functions from the House of Lords, and reduced the Lord Chancellor's judicial powers to improve separation of powers.",
+        "category": "Constitutional System",
+        "difficulty": "hard",
+        "tags": [
+          "constitutional reform act",
+          "supreme court",
+          "separation of powers"
+        ]
+      },
+      {
+        "id": "t015",
+        "question": "A 'statutory instrument' is:",
+        "choices": [
+          "A type of Act of Parliament",
+          "Secondary legislation made under powers granted by primary legislation",
+          "A legal document signed by the monarch",
+          "A court order interpreting the law"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Statutory instruments are secondary legislation allowing ministers to make detailed regulations under powers granted by Acts of Parliament, avoiding the need for new primary legislation.",
+        "category": "Legislative Process",
+        "difficulty": "hard",
+        "tags": [
+          "statutory instruments",
+          "secondary legislation",
+          "delegated powers"
+        ]
+      }
+    ]
+  }
+};
+        // Backwards compatibility 
+        
+        window.EMBEDDED_GAME_DATA = {
   "metadata": {
     "title": "UK Democracy Basics",
     "description": "Fundamental concepts about democracy and the UK political system",
@@ -59,7 +2163,7 @@
         "Every 6 years"
       ],
       "correctAnswer": 2,
-      "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier. The Fixed-term Parliaments Act 2011 set this rule, though it was repealed in 2022.",
+      "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier.",
       "category": "Elections",
       "difficulty": "medium",
       "tags": [
@@ -127,14 +2231,22 @@
     }
   ]
 };
-  </script>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   UK Democracy Education Game
-  </title>
-  <style>
-   /* Modern CSS Reset and Base Styles */
+        
+        
+        // Build information
+        window.BUILD_INFO = {
+            timestamp: "2025-07-19T23:11:51.427156",
+            timestampUnix: 1752963111,
+            version: "git-cb940d1"
+        };
+        
+        // Debug logging
+        console.log("🏗️ Build info:", window.BUILD_INFO);
+    </script>
+    
+    <!-- Embedded CSS -->
+    <style>
+        /* Modern CSS Reset and Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -218,6 +2330,45 @@ body {
 .game-info p {
     margin: 10px 0;
     font-size: 1.1rem;
+}
+
+/* Question Set Selector */
+.question-set-selector-container {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0 30px 0;
+    text-align: left;
+}
+
+.question-set-selector-container label {
+    display: block;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.question-set-selector {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.question-set-selector:hover {
+    border-color: #667eea;
+}
+
+.question-set-selector:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 /* Game Screen */
@@ -410,6 +2561,22 @@ body {
     margin-top: 20px;
 }
 
+/* Build Info Footer */
+.build-info {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    opacity: 0.5;
+    font-size: 10px;
+    color: #666;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.build-info:hover {
+    opacity: 0.8;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #game-container {
@@ -456,127 +2623,111 @@ body {
         font-size: 2rem;
     }
 }
-  </style>
- </head>
- <body>
-  <div id="game-container">
-   <!-- Loading Screen -->
-   <div class="screen" id="loading-screen">
-    <div class="loading-content">
-     <h1>
-      🏛️ Democracy Education Game
-     </h1>
-     <div class="spinner">
-     </div>
-     <p>
-      Loading questions...
-     </p>
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <!-- Loading Screen -->
+        <div class="screen" id="loading-screen">
+            <div class="loading-content">
+                <h1>🏛️ Democracy Education Game</h1>
+                <div class="spinner"></div>
+                <p>Loading questions...</p>
+            </div>
+        </div>
+        
+        <!-- Start Screen -->
+        <div class="screen" id="start-screen" style="display: none;">
+            <div class="start-content">
+                <h1 id="game-title">UK Democracy Education Game</h1>
+                <p id="game-description">Learn about democracy and the UK political system through interactive questions.</p>
+                
+                <!-- Question Set Selector -->
+                <div class="question-set-selector-container">
+                    <label for="question-set-selector">Choose a question set:</label>
+                    <select id="question-set-selector" class="question-set-selector">
+                        
+                        <option value="questions_citizenship_level">UK Democracy - Citizenship Test Level</option>
+                        
+                        <option value="questions_complete_collection">UK Democracy - Complete Collection</option>
+                        
+                        <option value="questions">UK Democracy Basics</option>
+                        
+                        <option value="questions_kids_12plus">UK Democracy for Young Citizens</option>
+                        
+                        <option value="questions_expert_level">UK Democracy - Expert Challenge</option>
+                        
+                    </select>
+                </div>
+                
+                <div class="game-info">
+                    <p>📚 Target Age: <span id="target-age">12+</span></p>
+                    <p>⏱️ No time limit - learn at your own pace</p>
+                    <p>🎯 Answer questions and discover the facts behind democracy</p>
+                    <p>📊 Questions: <span id="question-count">6</span></p>
+                </div>
+                
+                <button class="primary-button" id="start-button">Start Learning</button>
+            </div>
+        </div>
+        
+        <!-- Game Screen -->
+        <div class="screen" id="game-screen" style="display: none;">
+            <div class="game-header">
+                <div class="counter" id="question-counter">Question 1 of 6</div>
+                <div class="score" id="score-display">Score: 0/0</div>
+            </div>
+            <div class="question-container">
+                <h2 class="question" id="question-text">Loading question...</h2>
+                <div class="choices" id="choices-container">
+                    <!-- Choice buttons will be inserted here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Result Screen -->
+        <div class="screen" id="result-screen" style="display: none;">
+            <div class="result-content">
+                <div class="result-icon" id="result-icon">✅</div>
+                <h2 class="result-text" id="result-text">Correct!</h2>
+                <div class="explanation-container">
+                    <h3>Learn More:</h3>
+                    <p class="explanation" id="explanation-text">Explanation will appear here...</p>
+                </div>
+                <button class="primary-button" id="next-button">Next Question</button>
+            </div>
+        </div>
+        
+        <!-- Finish Screen -->
+        <div class="screen" id="finish-screen" style="display: none;">
+            <div class="finish-content">
+                <h1>🎉 Well Done!</h1>
+                <div class="final-stats">
+                    <div class="stat-item">
+                        <h2>Final Score</h2>
+                        <div class="big-number" id="final-score">0 out of 6</div>
+                    </div>
+                    <div class="stat-item">
+                        <h2>Accuracy</h2>
+                        <div class="big-number" id="final-percentage">0%</div>
+                    </div>
+                </div>
+                <div class="finish-message">
+                    <p>Great job learning about democracy! Every vote counts in making our democracy work.</p>
+                </div>
+                <button class="primary-button" id="play-again-button">Play Again</button>
+            </div>
+        </div>
     </div>
-   </div>
-   <!-- Start Screen -->
-   <div class="screen" id="start-screen" style="display: none;">
-    <div class="start-content">
-     <h1 id="game-title">
-      UK Democracy Education Game
-     </h1>
-     <p id="game-description">
-      Learn about democracy and the UK political system through interactive questions.
-     </p>
-     <div class="game-info">
-      <p>
-       📚 Target Age: 12+
-      </p>
-      <p>
-       ⏱️ No time limit - learn at your own pace
-      </p>
-      <p>
-       🎯 Answer questions and discover the facts behind democracy
-      </p>
-     </div>
-     <button class="primary-button" id="start-button">
-      Start Learning
-     </button>
+    
+    <!-- Build info footer -->
+    <div class="build-info">
+        <small>vgit-cb940d1 • Built: 2025-07-19T23:11:51</small>
     </div>
-   </div>
-   <!-- Game Screen -->
-   <div class="screen" id="game-screen" style="display: none;">
-    <div class="game-header">
-     <div class="counter" id="question-counter">
-      Question 1 of 6
-     </div>
-     <div class="score" id="score-display">
-      Score: 0/0
-     </div>
-    </div>
-    <div class="question-container">
-     <h2 class="question" id="question-text">
-      Loading question...
-     </h2>
-     <div class="choices" id="choices-container">
-      <!-- Choice buttons will be inserted here -->
-     </div>
-    </div>
-   </div>
-   <!-- Result Screen -->
-   <div class="screen" id="result-screen" style="display: none;">
-    <div class="result-content">
-     <div class="result-icon" id="result-icon">
-      ✅
-     </div>
-     <h2 class="result-text" id="result-text">
-      Correct!
-     </h2>
-     <div class="explanation-container">
-      <h3>
-       Learn More:
-      </h3>
-      <p class="explanation" id="explanation-text">
-       Explanation will appear here...
-      </p>
-     </div>
-     <button class="primary-button" id="next-button">
-      Next Question
-     </button>
-    </div>
-   </div>
-   <!-- Finish Screen -->
-   <div class="screen" id="finish-screen" style="display: none;">
-    <div class="finish-content">
-     <h1>
-      🎉 Well Done!
-     </h1>
-     <div class="final-stats">
-      <div class="stat-item">
-       <h2>
-        Final Score
-       </h2>
-       <div class="big-number" id="final-score">
-        0 out of 6
-       </div>
-      </div>
-      <div class="stat-item">
-       <h2>
-        Accuracy
-       </h2>
-       <div class="big-number" id="final-percentage">
-        0%
-       </div>
-      </div>
-     </div>
-     <div class="finish-message">
-      <p>
-       Great job learning about democracy! Every vote counts in making our democracy work.
-      </p>
-     </div>
-     <button class="primary-button" id="play-again-button">
-      Play Again
-     </button>
-    </div>
-   </div>
-  </div>
-  <!-- Scripts -->
-  <script>
-   /**
+    
+    <!-- Embedded JavaScript -->
+    <script>
+        /**
  * Democracy Education Game Engine
  * Core logic for flash-card quiz game
  */
@@ -770,9 +2921,8 @@ class GameEngine {
         return this.gameState === 'playing';
     }
 }
-  </script>
-  <script>
-   /**
+
+/**
  * UI Controller for Democracy Education Game
  * Handles all user interface interactions and updates
  */
@@ -801,6 +2951,9 @@ class UIController {
             gameTitle: document.getElementById('game-title'),
             gameDescription: document.getElementById('game-description'),
             startButton: document.getElementById('start-button'),
+            questionSetSelector: document.getElementById('question-set-selector'),
+            targetAge: document.getElementById('target-age'),
+            questionCount: document.getElementById('question-count'),
             
             // Game screen
             questionCounter: document.getElementById('question-counter'),
@@ -837,6 +2990,10 @@ class UIController {
         
         if (this.elements.playAgainButton) {
             this.elements.playAgainButton.addEventListener('click', () => this.restartGame());
+        }
+        
+        if (this.elements.questionSetSelector) {
+            this.elements.questionSetSelector.addEventListener('change', (e) => this.onQuestionSetChange(e.target.value));
         }
     }
 
@@ -885,6 +3042,100 @@ class UIController {
         } catch (error) {
             console.error('Error loading embedded game:', error);
             this.showError('Failed to load embedded game data.');
+        }
+    }
+
+    /**
+     * Load embedded question sets (for packed version with multiple sets)
+     */
+    async loadEmbeddedQuestionSets() {
+        this.showScreen('loading');
+        
+        try {
+            if (window.EMBEDDED_QUESTION_SETS) {
+                this.questionSets = window.EMBEDDED_QUESTION_SETS;
+                
+                // Load the first available question set by default
+                const firstKey = Object.keys(this.questionSets)[0];
+                if (firstKey) {
+                    const success = await this.game.loadQuestions(this.questionSets[firstKey]);
+                    if (success) {
+                        this.currentQuestionSetKey = firstKey;
+                        // Set the selector to the first key
+                        if (this.elements.questionSetSelector) {
+                            this.elements.questionSetSelector.value = firstKey;
+                        }
+                        this.updateStartScreenWithQuestionSets();
+                        this.showScreen('start');
+                    } else {
+                        this.showError('Failed to load question set');
+                    }
+                } else {
+                    this.showError('No question sets found');
+                }
+            } else {
+                // Fallback to single embedded data for backwards compatibility
+                this.loadEmbeddedGame();
+            }
+        } catch (error) {
+            console.error('Error loading embedded question sets:', error);
+            this.showError('Failed to load question sets.');
+        }
+    }
+
+    /**
+     * Handle question set selection change
+     */
+    async onQuestionSetChange(selectedKey) {
+        if (this.questionSets && this.questionSets[selectedKey]) {
+            const success = await this.game.loadQuestions(this.questionSets[selectedKey]);
+            if (success) {
+                this.currentQuestionSetKey = selectedKey;
+                this.updateQuestionSetInfo();
+            }
+        }
+    }
+
+    /**
+     * Update start screen with multiple question sets
+     */
+    updateStartScreenWithQuestionSets() {
+        if (this.questionSets) {
+            // Update selector options (already done in template)
+            
+            // Update current question set info
+            this.updateQuestionSetInfo();
+        }
+    }
+
+    /**
+     * Update question set specific information
+     */
+    updateQuestionSetInfo() {
+        if (!this.currentQuestionSetKey || !this.questionSets) return;
+        
+        const currentSet = this.questionSets[this.currentQuestionSetKey];
+        const metadata = currentSet.metadata || {};
+        
+        // Update title and description
+        if (this.elements.gameTitle) {
+            this.elements.gameTitle.textContent = metadata.title || 'Democracy Education Game';
+        }
+        
+        if (this.elements.gameDescription) {
+            this.elements.gameDescription.textContent = 
+                metadata.description || 'Learn about democracy through interactive questions';
+        }
+        
+        // Update target age
+        if (this.elements.targetAge) {
+            this.elements.targetAge.textContent = metadata.targetAge || '12+';
+        }
+        
+        // Update question count
+        if (this.elements.questionCount) {
+            const questionCount = currentSet.questions ? currentSet.questions.length : 0;
+            this.elements.questionCount.textContent = questionCount;
         }
     }
 
@@ -957,22 +3208,29 @@ class UIController {
             const button = document.createElement('button');
             button.className = 'choice-button';
             button.textContent = choice;
-            button.onclick = () => this.selectAnswer(index);
+            button.onclick = () => {
+                console.log(`Choice ${index} clicked: ${choice}`);
+                this.selectAnswer(index);
+            };
             
             this.elements.choicesContainer.appendChild(button);
         });
+        console.log(`Created ${choices.length} choice buttons`);
     }
 
     /**
      * Handle answer selection
      */
     selectAnswer(answerIndex) {
+        console.log(`selectAnswer called with index: ${answerIndex}`);
+        
         // Disable all choice buttons
         const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
         buttons.forEach(button => button.disabled = true);
 
         // Submit answer and get result
         const result = this.game.submitAnswer(answerIndex);
+        console.log('Answer submitted, result:', result);
         
         // Highlight correct and incorrect answers
         buttons.forEach((button, index) => {
@@ -985,8 +3243,9 @@ class UIController {
 
         // Show result after a brief delay
         setTimeout(() => {
+            console.log('About to show result screen...');
             this.showResult(result);
-        }, 1500);
+        }, 800);
     }
 
     /**
@@ -1007,6 +3266,7 @@ class UIController {
             this.elements.explanationText.textContent = result.explanation;
         }
 
+        console.log('Showing result screen...');
         this.showScreen('result');
     }
 
@@ -1091,16 +3351,20 @@ class UIController {
         }
     }
 }
-  </script>
-  <script>
-   // Initialize the game when page loads
+
+
+    </script>
+    
+    <!-- Game Initialization -->
+    <script>
+        // Initialize the game when page loads
         document.addEventListener('DOMContentLoaded', function() {
             const gameEngine = new GameEngine();
             const uiController = new UIController(gameEngine);
             
-            // Start loading the game
-            uiController.loadEmbeddedGame();
+            // Start loading the game with multiple question sets
+            uiController.loadEmbeddedQuestionSets();
         });
-  </script>
- </body>
+    </script>
+</body>
 </html>

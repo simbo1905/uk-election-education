@@ -1,0 +1,296 @@
+{
+  "metadata": {
+    "title": "UK Democracy - Expert Challenge",
+    "description": "Challenging questions about UK democracy designed to test detailed knowledge",
+    "version": "1.0.0",
+    "targetAge": "16+",
+    "subject": "Advanced UK Democracy and Government"
+  },
+  "questions": [
+    {
+      "id": "t001",
+      "question": "Which of the following accurately describes the Salisbury Convention?",
+      "choices": [
+        "The House of Lords should not reject legislation promised in the government's election manifesto",
+        "The Prime Minister must consult Cabinet before dissolving Parliament",
+        "All bills must be read three times in each House",
+        "The monarch cannot refuse royal assent to any bill"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Salisbury Convention is an important constitutional convention that the House of Lords should not oppose bills implementing the governing party's election manifesto commitments.",
+      "category": "Constitutional Conventions",
+      "difficulty": "hard",
+      "tags": [
+        "salisbury convention",
+        "house of lords",
+        "manifesto"
+      ]
+    },
+    {
+      "id": "t002",
+      "question": "The 'West Lothian Question' refers to:",
+      "choices": [
+        "Whether Scottish MPs can vote on England-only matters at Westminster",
+        "The boundary disputes between England and Scotland",
+        "The right of Scottish Parliament to override UK law",
+        "The method of electing Scottish MPs to Westminster"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The West Lothian Question asks whether it's fair for Scottish MPs to vote on England-only matters when English MPs cannot vote on devolved Scottish matters.",
+      "category": "Devolution",
+      "difficulty": "hard",
+      "tags": [
+        "west lothian question",
+        "devolution",
+        "scottish MPs"
+      ]
+    },
+    {
+      "id": "t003",
+      "question": "Under the current rules, how many hereditary peers can sit in the House of Lords?",
+      "choices": [
+        "None - all hereditary peers were removed",
+        "92 hereditary peers",
+        "Any number if they are elected",
+        "Only those who also hold life peerages"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Since the House of Lords Act 1999, only 92 hereditary peers can remain: 90 elected by their fellow hereditary peers plus the Earl Marshal and Lord Great Chamberlain.",
+      "category": "Parliament",
+      "difficulty": "hard",
+      "tags": [
+        "hereditary peers",
+        "house of lords",
+        "1999 reform"
+      ]
+    },
+    {
+      "id": "t004",
+      "question": "The 'payroll vote' in the House of Commons refers to:",
+      "choices": [
+        "MPs voting on their own salaries",
+        "Government ministers and parliamentary private secretaries who usually support the government",
+        "MPs who are paid by lobby groups",
+        "The final vote on the annual budget"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The payroll vote consists of government ministers and parliamentary private secretaries (around 140 MPs) who are expected to support government policy or resign.",
+      "category": "Parliament",
+      "difficulty": "hard",
+      "tags": [
+        "payroll vote",
+        "government ministers",
+        "loyalty"
+      ]
+    },
+    {
+      "id": "t005",
+      "question": "Which voting system is used for electing the London Assembly?",
+      "choices": [
+        "First Past the Post throughout",
+        "Single Transferable Vote",
+        "Additional Member System",
+        "Alternative Vote Plus"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The London Assembly uses the Additional Member System with 14 constituency members (FPTP) and 11 London-wide members (proportional representation).",
+      "category": "Elections",
+      "difficulty": "hard",
+      "tags": [
+        "london assembly",
+        "AMS",
+        "voting systems"
+      ]
+    },
+    {
+      "id": "t006",
+      "question": "The Barnett Formula determines:",
+      "choices": [
+        "How constituency boundaries are drawn",
+        "How public spending is allocated between UK nations",
+        "The number of peers in the House of Lords",
+        "When general elections must be held"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Barnett Formula is used to calculate the annual adjustments to public spending allocated to Scotland, Wales and Northern Ireland relative to England.",
+      "category": "Devolution",
+      "difficulty": "hard",
+      "tags": [
+        "barnett formula",
+        "public spending",
+        "devolution"
+      ]
+    },
+    {
+      "id": "t007",
+      "question": "Under the Fixed-term Parliaments Act 2011 (now repealed), early elections could be triggered by:",
+      "choices": [
+        "A simple majority vote of MPs",
+        "Two-thirds of all MPs voting for dissolution",
+        "The Prime Minister requesting the monarch",
+        "A referendum on early dissolution"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Act required either a two-thirds majority of all MPs or a successful motion of no confidence followed by 14 days without a new government being formed.",
+      "category": "Elections",
+      "difficulty": "hard",
+      "tags": [
+        "FTPA",
+        "early elections",
+        "supermajority"
+      ]
+    },
+    {
+      "id": "t008",
+      "question": "The role of the Lord Privy Seal is:",
+      "choices": [
+        "To control access to the Royal Seal",
+        "A senior Cabinet position often without specific departmental duties",
+        "To oversee the House of Lords",
+        "To advise the monarch on constitutional matters"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Lord Privy Seal is typically a senior Cabinet minister without specific departmental responsibilities, often taking on coordinating roles across government.",
+      "category": "Government",
+      "difficulty": "hard",
+      "tags": [
+        "lord privy seal",
+        "cabinet",
+        "sinecure"
+      ]
+    },
+    {
+      "id": "t009",
+      "question": "What is meant by 'collective ministerial responsibility'?",
+      "choices": [
+        "All ministers share responsibility for government policy publicly",
+        "Ministers can only be dismissed together",
+        "Cabinet decisions must be unanimous",
+        "All ministers must come from the same political party"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Collective responsibility means all ministers must publicly support government policy, even if they disagreed in private, or else resign from government.",
+      "category": "Government",
+      "difficulty": "hard",
+      "tags": [
+        "collective responsibility",
+        "cabinet",
+        "ministerial responsibility"
+      ]
+    },
+    {
+      "id": "t010",
+      "question": "The English Votes for English Laws (EVEL) procedure was designed to:",
+      "choices": [
+        "Prevent Scottish MPs voting on England-only legislation",
+        "Create a separate English Parliament",
+        "Give English regions more autonomy",
+        "Reduce the number of English constituencies"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EVEL (2015-2021) gave English (or English and Welsh) MPs a decisive say over legislation affecting only England, addressing the West Lothian Question partially.",
+      "category": "Devolution",
+      "difficulty": "hard",
+      "tags": [
+        "EVEL",
+        "english votes",
+        "devolution"
+      ]
+    },
+    {
+      "id": "t011",
+      "question": "A 'money bill' in the UK Parliament is:",
+      "choices": [
+        "Any bill involving government spending",
+        "A bill certified by the Speaker as dealing only with taxation or public money",
+        "The annual Budget bill only",
+        "Any bill that affects the Bank of England"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A money bill must be certified by the Speaker as dealing only with specified financial matters. The House of Lords can only delay it for one month.",
+      "category": "Parliament",
+      "difficulty": "hard",
+      "tags": [
+        "money bills",
+        "speaker certificate",
+        "house of lords"
+      ]
+    },
+    {
+      "id": "t012",
+      "question": "The 'Sewell Convention' states that:",
+      "choices": [
+        "The UK Parliament will not normally legislate on devolved matters without consent",
+        "Scottish law takes precedence over UK law in Scotland",
+        "The Scottish Parliament cannot be dissolved without consent",
+        "Scottish ministers must attend UK Cabinet meetings"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Sewell Convention holds that the UK Parliament will not normally legislate on devolved matters without the consent of the relevant devolved legislature.",
+      "category": "Devolution",
+      "difficulty": "hard",
+      "tags": [
+        "sewell convention",
+        "legislative consent",
+        "devolution"
+      ]
+    },
+    {
+      "id": "t013",
+      "question": "Which principle prevents the courts from questioning proceedings in Parliament?",
+      "choices": [
+        "Parliamentary sovereignty",
+        "Parliamentary privilege",
+        "Collective responsibility",
+        "The separation of powers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Parliamentary privilege protects freedom of speech in Parliament and prevents courts from questioning what is said or done in parliamentary proceedings.",
+      "category": "Constitutional System",
+      "difficulty": "hard",
+      "tags": [
+        "parliamentary privilege",
+        "freedom of speech",
+        "separation of powers"
+      ]
+    },
+    {
+      "id": "t014",
+      "question": "The Constitutional Reform Act 2005 created:",
+      "choices": [
+        "The Scottish Parliament",
+        "The Supreme Court and reformed the Lord Chancellor's role",
+        "The Barnett Formula",
+        "The Fixed-term Parliaments Act"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Act created the UK Supreme Court, transferred judicial functions from the House of Lords, and reduced the Lord Chancellor's judicial powers to improve separation of powers.",
+      "category": "Constitutional System",
+      "difficulty": "hard",
+      "tags": [
+        "constitutional reform act",
+        "supreme court",
+        "separation of powers"
+      ]
+    },
+    {
+      "id": "t015",
+      "question": "A 'statutory instrument' is:",
+      "choices": [
+        "A type of Act of Parliament",
+        "Secondary legislation made under powers granted by primary legislation",
+        "A legal document signed by the monarch",
+        "A court order interpreting the law"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Statutory instruments are secondary legislation allowing ministers to make detailed regulations under powers granted by Acts of Parliament, avoiding the need for new primary legislation.",
+      "category": "Legislative Process",
+      "difficulty": "hard",
+      "tags": [
+        "statutory instruments",
+        "secondary legislation",
+        "delegated powers"
+      ]
+    }
+  ]
+}

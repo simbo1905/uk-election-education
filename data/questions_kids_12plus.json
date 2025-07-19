@@ -1,0 +1,297 @@
+{
+  "metadata": {
+    "title": "UK Democracy for Young Citizens",
+    "description": "Simple, clear questions about UK democracy for children aged 12+",
+    "version": "1.0.0",
+    "targetAge": "12+",
+    "subject": "UK Democracy and Government"
+  },
+  "questions": [
+    {
+      "id": "k001",
+      "question": "What does 'democracy' mean?",
+      "choices": [
+        "Rule by the richest people",
+        "Rule by the people",
+        "Rule by the military",
+        "Rule by computers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Democracy comes from Greek words meaning 'people power'. In a democracy, the people choose their government by voting.",
+      "category": "Basic Concepts",
+      "difficulty": "easy",
+      "tags": [
+        "democracy",
+        "definition",
+        "basics"
+      ]
+    },
+    {
+      "id": "k002",
+      "question": "At what age can you currently vote in UK general elections?",
+      "choices": [
+        "16",
+        "17",
+        "18",
+        "21"
+      ],
+      "correctAnswer": 2,
+      "explanation": "You must be 18 to vote in UK general elections, though the government plans to lower this to 16 in the future.",
+      "category": "Voting",
+      "difficulty": "easy",
+      "tags": [
+        "voting",
+        "age",
+        "elections"
+      ]
+    },
+    {
+      "id": "k003",
+      "question": "How many parts make up the UK Parliament?",
+      "choices": [
+        "Two - House of Commons and House of Lords",
+        "Three - House of Commons, House of Lords, and the Monarch",
+        "Four - including the Prime Minister",
+        "One - just the House of Commons"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The UK Parliament has three parts: the House of Commons (elected MPs), the House of Lords (appointed members), and the Monarch.",
+      "category": "Parliament",
+      "difficulty": "easy",
+      "tags": [
+        "parliament",
+        "structure",
+        "government"
+      ]
+    },
+    {
+      "id": "k004",
+      "question": "What do we call the person who leads the UK government?",
+      "choices": [
+        "The President",
+        "The Prime Minister",
+        "The King",
+        "The Speaker"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Prime Minister leads the UK government. They are usually the leader of the political party with the most MPs.",
+      "category": "Government",
+      "difficulty": "easy",
+      "tags": [
+        "prime minister",
+        "government",
+        "leader"
+      ]
+    },
+    {
+      "id": "k005",
+      "question": "How many MPs are there in the House of Commons?",
+      "choices": [
+        "500",
+        "650",
+        "750",
+        "1000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "There are 650 MPs in the House of Commons, each representing a different area of the UK called a constituency.",
+      "category": "Parliament",
+      "difficulty": "easy",
+      "tags": [
+        "MPs",
+        "house of commons",
+        "numbers"
+      ]
+    },
+    {
+      "id": "k006",
+      "question": "What is the voting system used to elect UK MPs called?",
+      "choices": [
+        "Proportional Representation",
+        "First Past the Post",
+        "Alternative Vote",
+        "Single Transferable Vote"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The UK uses First Past the Post. In each constituency, the candidate with the most votes wins and becomes the MP.",
+      "category": "Elections",
+      "difficulty": "medium",
+      "tags": [
+        "voting system",
+        "elections",
+        "FPTP"
+      ]
+    },
+    {
+      "id": "k007",
+      "question": "Which of these is a key feature of democracy?",
+      "choices": [
+        "Only rich people can vote",
+        "Elections happen secretly",
+        "Everyone eligible can vote freely",
+        "The government never changes"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Democracy means everyone who is eligible can vote freely to choose their representatives. Elections should be fair and open to all.",
+      "category": "Basic Concepts",
+      "difficulty": "easy",
+      "tags": [
+        "democracy",
+        "voting rights",
+        "fairness"
+      ]
+    },
+    {
+      "id": "k008",
+      "question": "What do MPs do in Parliament?",
+      "choices": [
+        "Only listen to government ministers",
+        "Make laws, represent constituents, and question the government",
+        "Run local schools and hospitals",
+        "Only vote on what the Prime Minister wants"
+      ],
+      "correctAnswer": 1,
+      "explanation": "MPs represent their local area, help make new laws, and question the government to make sure it's doing a good job.",
+      "category": "Parliament",
+      "difficulty": "medium",
+      "tags": [
+        "MPs",
+        "parliament",
+        "representation"
+      ]
+    },
+    {
+      "id": "k009",
+      "question": "Scotland, Wales and Northern Ireland have their own:",
+      "choices": [
+        "Prime Ministers",
+        "Kings and Queens",
+        "Parliaments or Assemblies with some powers",
+        "Completely separate governments"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Scotland, Wales and Northern Ireland have devolved parliaments or assemblies that make decisions on some issues like health and education in their areas.",
+      "category": "Devolution",
+      "difficulty": "medium",
+      "tags": [
+        "devolution",
+        "scotland",
+        "wales",
+        "northern ireland"
+      ]
+    },
+    {
+      "id": "k010",
+      "question": "What must you show when voting at a polling station?",
+      "choices": [
+        "Nothing at all",
+        "Photo ID",
+        "Just your name",
+        "A driving licence only"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Since 2023, you must show photo ID when voting in person at elections in England. This includes passports, driving licences, or other accepted forms of photo ID.",
+      "category": "Voting",
+      "difficulty": "easy",
+      "tags": [
+        "voting",
+        "ID",
+        "elections"
+      ]
+    },
+    {
+      "id": "k011",
+      "question": "The House of Lords members are:",
+      "choices": [
+        "All elected by the people",
+        "Mostly appointed for life",
+        "All members of the Royal Family",
+        "Chosen by lottery"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Most House of Lords members are life peers, appointed by the monarch on advice from the Prime Minister. They are not elected by the public.",
+      "category": "Parliament",
+      "difficulty": "medium",
+      "tags": [
+        "house of lords",
+        "peers",
+        "appointments"
+      ]
+    },
+    {
+      "id": "k012",
+      "question": "How often must UK general elections be held?",
+      "choices": [
+        "Every 3 years",
+        "Every 4 years",
+        "At least every 5 years",
+        "Every 6 years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "UK general elections must happen at least every 5 years, but the Prime Minister can call one earlier if needed.",
+      "category": "Elections",
+      "difficulty": "easy",
+      "tags": [
+        "elections",
+        "timing",
+        "frequency"
+      ]
+    },
+    {
+      "id": "k013",
+      "question": "What is a constituency?",
+      "choices": [
+        "A type of election",
+        "A political party",
+        "An area represented by one MP",
+        "A government department"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A constituency is a geographical area that elects one MP to represent them in the House of Commons. The UK has 650 constituencies.",
+      "category": "Elections",
+      "difficulty": "easy",
+      "tags": [
+        "constituency",
+        "MPs",
+        "representation"
+      ]
+    },
+    {
+      "id": "k014",
+      "question": "Who is the current head of state of the UK?",
+      "choices": [
+        "The Prime Minister",
+        "King Charles III",
+        "The Speaker of the House",
+        "The President"
+      ],
+      "correctAnswer": 1,
+      "explanation": "King Charles III is the head of state. The UK is a constitutional monarchy where the monarch is the head of state but the Prime Minister leads the government.",
+      "category": "Government",
+      "difficulty": "easy",
+      "tags": [
+        "monarchy",
+        "head of state",
+        "king"
+      ]
+    },
+    {
+      "id": "k015",
+      "question": "What happens if no political party wins a majority in an election?",
+      "choices": [
+        "There is another election immediately",
+        "The King chooses the government",
+        "Parties may form a coalition",
+        "The previous government stays forever"
+      ],
+      "correctAnswer": 2,
+      "explanation": "If no party wins a majority (more than half the seats), parties can work together in a coalition to form a government.",
+      "category": "Government",
+      "difficulty": "medium",
+      "tags": [
+        "coalition",
+        "government",
+        "majority"
+      ]
+    }
+  ]
+}

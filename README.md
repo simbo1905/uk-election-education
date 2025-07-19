@@ -29,13 +29,29 @@ A vanilla JavaScript flash-card game to teach children (12+) about democracy and
 
 ## Development
 
-Run tests with Puppeteer:
+Setup development environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install pyppeteer
+pip install pyppeteer jinja2 jsonschema
+```
+
+Run tests:
+```bash
 python tests/puppeteer/test_game.py
 ```
+
+Build project:
+```bash
+python pack_project.py
+```
+
+Verify build worked:
+```bash
+python test_build_info.py
+```
+
+The pack script embeds build timestamps and version info to verify the build process is working correctly. Check the bottom-right corner of the generated HTML page for build info, and browser console for debug logs.
 
 ## Usage
 

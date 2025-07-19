@@ -27,6 +27,9 @@ class UIController {
             gameTitle: document.getElementById('game-title'),
             gameDescription: document.getElementById('game-description'),
             startButton: document.getElementById('start-button'),
+            questionSetSelector: document.getElementById('question-set-selector'),
+            targetAge: document.getElementById('target-age'),
+            questionCount: document.getElementById('question-count'),
             
             // Game screen
             questionCounter: document.getElementById('question-counter'),
@@ -63,6 +66,10 @@ class UIController {
         
         if (this.elements.playAgainButton) {
             this.elements.playAgainButton.addEventListener('click', () => this.restartGame());
+        }
+        
+        if (this.elements.questionSetSelector) {
+            this.elements.questionSetSelector.addEventListener('change', (e) => this.onQuestionSetChange(e.target.value));
         }
     }
 
@@ -111,6 +118,100 @@ class UIController {
         } catch (error) {
             console.error('Error loading embedded game:', error);
             this.showError('Failed to load embedded game data.');
+        }
+    }
+
+    /**
+     * Load embedded question sets (for packed version with multiple sets)
+     */
+    async loadEmbeddedQuestionSets() {
+        this.showScreen('loading');
+        
+        try {
+            if (window.EMBEDDED_QUESTION_SETS) {
+                this.questionSets = window.EMBEDDED_QUESTION_SETS;
+                
+                // Load the first available question set by default
+                const firstKey = Object.keys(this.questionSets)[0];
+                if (firstKey) {
+                    const success = await this.game.loadQuestions(this.questionSets[firstKey]);
+                    if (success) {
+                        this.currentQuestionSetKey = firstKey;
+                        // Set the selector to the first key
+                        if (this.elements.questionSetSelector) {
+                            this.elements.questionSetSelector.value = firstKey;
+                        }
+                        this.updateStartScreenWithQuestionSets();
+                        this.showScreen('start');
+                    } else {
+                        this.showError('Failed to load question set');
+                    }
+                } else {
+                    this.showError('No question sets found');
+                }
+            } else {
+                // Fallback to single embedded data for backwards compatibility
+                this.loadEmbeddedGame();
+            }
+        } catch (error) {
+            console.error('Error loading embedded question sets:', error);
+            this.showError('Failed to load question sets.');
+        }
+    }
+
+    /**
+     * Handle question set selection change
+     */
+    async onQuestionSetChange(selectedKey) {
+        if (this.questionSets && this.questionSets[selectedKey]) {
+            const success = await this.game.loadQuestions(this.questionSets[selectedKey]);
+            if (success) {
+                this.currentQuestionSetKey = selectedKey;
+                this.updateQuestionSetInfo();
+            }
+        }
+    }
+
+    /**
+     * Update start screen with multiple question sets
+     */
+    updateStartScreenWithQuestionSets() {
+        if (this.questionSets) {
+            // Update selector options (already done in template)
+            
+            // Update current question set info
+            this.updateQuestionSetInfo();
+        }
+    }
+
+    /**
+     * Update question set specific information
+     */
+    updateQuestionSetInfo() {
+        if (!this.currentQuestionSetKey || !this.questionSets) return;
+        
+        const currentSet = this.questionSets[this.currentQuestionSetKey];
+        const metadata = currentSet.metadata || {};
+        
+        // Update title and description
+        if (this.elements.gameTitle) {
+            this.elements.gameTitle.textContent = metadata.title || 'Democracy Education Game';
+        }
+        
+        if (this.elements.gameDescription) {
+            this.elements.gameDescription.textContent = 
+                metadata.description || 'Learn about democracy through interactive questions';
+        }
+        
+        // Update target age
+        if (this.elements.targetAge) {
+            this.elements.targetAge.textContent = metadata.targetAge || '12+';
+        }
+        
+        // Update question count
+        if (this.elements.questionCount) {
+            const questionCount = currentSet.questions ? currentSet.questions.length : 0;
+            this.elements.questionCount.textContent = questionCount;
         }
     }
 
@@ -183,22 +284,29 @@ class UIController {
             const button = document.createElement('button');
             button.className = 'choice-button';
             button.textContent = choice;
-            button.onclick = () => this.selectAnswer(index);
+            button.onclick = () => {
+                console.log(`Choice ${index} clicked: ${choice}`);
+                this.selectAnswer(index);
+            };
             
             this.elements.choicesContainer.appendChild(button);
         });
+        console.log(`Created ${choices.length} choice buttons`);
     }
 
     /**
      * Handle answer selection
      */
     selectAnswer(answerIndex) {
+        console.log(`selectAnswer called with index: ${answerIndex}`);
+        
         // Disable all choice buttons
         const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
         buttons.forEach(button => button.disabled = true);
 
         // Submit answer and get result
         const result = this.game.submitAnswer(answerIndex);
+        console.log('Answer submitted, result:', result);
         
         // Highlight correct and incorrect answers
         buttons.forEach((button, index) => {
@@ -211,8 +319,9 @@ class UIController {
 
         // Show result after a brief delay
         setTimeout(() => {
+            console.log('About to show result screen...');
             this.showResult(result);
-        }, 1500);
+        }, 800);
     }
 
     /**
@@ -233,6 +342,7 @@ class UIController {
             this.elements.explanationText.textContent = result.explanation;
         }
 
+        console.log('Showing result screen...');
         this.showScreen('result');
     }
 

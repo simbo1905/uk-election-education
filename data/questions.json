@@ -47,7 +47,7 @@
         "Every 6 years"
       ],
       "correctAnswer": 2,
-      "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier. The Fixed-term Parliaments Act 2011 set this rule, though it was repealed in 2022.",
+      "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier.",
       "category": "Elections",
       "difficulty": "medium",
       "tags": ["elections", "timing", "parliament"]

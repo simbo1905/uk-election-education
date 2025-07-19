@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "title": "UK Democracy - Citizenship Test Level",
+    "description": "Questions about UK democracy at the level of the official Life in the UK citizenship test",
+    "version": "1.0.0",
+    "targetAge": "18+",
+    "subject": "UK Democracy and Constitutional System"
+  },
+  "questions": [
+    {
+      "id": "c001",
+      "question": "Which TWO of the following are constitutional institutions in the UK?",
+      "choices": [
+        "The monarchy and the civil service",
+        "The armed forces and local newspapers",
+        "Trade unions and pressure groups",
+        "The European Union and Commonwealth"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The constitutional institutions include the monarchy, Parliament, the Prime Minister, the cabinet, the judiciary, the police, the civil service, and local government.",
+      "category": "Constitutional System",
+      "difficulty": "medium",
+      "tags": [
+        "constitution",
+        "institutions",
+        "government"
+      ]
+    },
+    {
+      "id": "c002",
+      "question": "The UK has an 'unwritten' constitution. What does this mean?",
+      "choices": [
+        "There are no laws governing how the country is run",
+        "The constitution is not written down in a single document",
+        "Only the monarch knows what the constitution says",
+        "The constitution changes every year"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Unlike countries like the USA, the UK constitution is not contained in one single document but consists of laws, conventions, and practices that have developed over centuries.",
+      "category": "Constitutional System",
+      "difficulty": "medium",
+      "tags": [
+        "constitution",
+        "unwritten",
+        "legal system"
+      ]
+    },
+    {
+      "id": "c003",
+      "question": "The system of government in the UK is:",
+      "choices": [
+        "A federal republic",
+        "A parliamentary democracy",
+        "A direct democracy",
+        "A presidential system"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The UK has a parliamentary democracy where voters elect MPs to Parliament, and the party with the majority of MPs forms the government.",
+      "category": "Government System",
+      "difficulty": "easy",
+      "tags": [
+        "parliamentary democracy",
+        "government",
+        "system"
+      ]
+    },
+    {
+      "id": "c004",
+      "question": "Which of the following best describes the role of the House of Lords?",
+      "choices": [
+        "It has exactly the same powers as the House of Commons",
+        "It can delay but cannot permanently block most legislation",
+        "It only deals with criminal court cases",
+        "It controls all government spending"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The House of Lords can suggest amendments and delay legislation, but the House of Commons can ultimately overrule it. The Lords cannot permanently block most bills.",
+      "category": "Parliament",
+      "difficulty": "hard",
+      "tags": [
+        "house of lords",
+        "parliament",
+        "legislation"
+      ]
+    },
+    {
+      "id": "c005",
+      "question": "How are most members of the House of Lords appointed?",
+      "choices": [
+        "They are directly elected by the public",
+        "They inherit their positions",
+        "They are appointed by the monarch on the advice of the Prime Minister",
+        "They are chosen by other MPs"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Most peers are life peers appointed by the monarch on the advice of the Prime Minister. Some are also appointed on advice from other party leaders or an independent commission.",
+      "category": "Parliament",
+      "difficulty": "medium",
+      "tags": [
+        "house of lords",
+        "peers",
+        "appointments"
+      ]
+    },
+    {
+      "id": "c006",
+      "question": "Devolution has given Scotland, Wales and Northern Ireland:",
+      "choices": [
+        "Complete independence from the UK",
+        "The power to make laws in certain areas",
+        "The right to leave the UK whenever they want",
+        "Control over UK foreign policy"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Devolution has transferred certain powers from Westminster to the Scottish Parliament, Welsh Parliament (Senedd), and Northern Ireland Assembly, but the UK Parliament remains sovereign.",
+      "category": "Devolution",
+      "difficulty": "medium",
+      "tags": [
+        "devolution",
+        "scotland",
+        "wales",
+        "northern ireland"
+      ]
+    },
+    {
+      "id": "c007",
+      "question": "In the UK electoral system, a by-election occurs when:",
+      "choices": [
+        "The Prime Minister calls a general election",
+        "An MP dies or resigns during a Parliament",
+        "A new political party is formed",
+        "The monarch dissolves Parliament"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A by-election is held in a single constituency when the sitting MP dies, resigns, or is disqualified during the term of Parliament.",
+      "category": "Elections",
+      "difficulty": "medium",
+      "tags": [
+        "by-election",
+        "elections",
+        "MP"
+      ]
+    },
+    {
+      "id": "c008",
+      "question": "The Speaker of the House of Commons is:",
+      "choices": [
+        "The leader of the largest political party",
+        "A neutral chair who keeps order during debates",
+        "The monarch's representative in Parliament",
+        "The most senior civil servant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Speaker is an MP chosen by other MPs to chair debates neutrally, ensuring parliamentary rules are followed and opposition parties get fair time to speak.",
+      "category": "Parliament",
+      "difficulty": "medium",
+      "tags": [
+        "speaker",
+        "parliament",
+        "debates"
+      ]
+    },
+    {
+      "id": "c009",
+      "question": "Which of these powers is reserved to the UK government and NOT devolved?",
+      "choices": [
+        "Health policy",
+        "Education policy",
+        "Defence and foreign policy",
+        "Local government"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Defence, foreign policy, immigration, and constitutional matters remain reserved to the UK government. Health and education are largely devolved.",
+      "category": "Devolution",
+      "difficulty": "hard",
+      "tags": [
+        "reserved powers",
+        "devolution",
+        "government"
+      ]
+    },
+    {
+      "id": "c010",
+      "question": "The monarch's role in the UK political system includes:",
+      "choices": [
+        "Making all government policy decisions",
+        "Choosing which party wins elections",
+        "Giving royal assent to make bills into law",
+        "Controlling Parliament's daily business"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The monarch has important ceremonial roles including giving royal assent to bills, but does not make policy decisions. The monarch acts on the advice of government ministers.",
+      "category": "Monarchy",
+      "difficulty": "medium",
+      "tags": [
+        "monarchy",
+        "royal assent",
+        "constitutional role"
+      ]
+    },
+    {
+      "id": "c011",
+      "question": "Under the UK's constitutional monarchy:",
+      "choices": [
+        "The monarch rules the country directly",
+        "The monarch reigns but does not rule",
+        "The monarch only appears on special occasions",
+        "The monarch controls the armed forces personally"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In the UK's constitutional monarchy, the monarch is head of state but does not rule. Political power is exercised by elected politicians and appointed officials.",
+      "category": "Monarchy",
+      "difficulty": "medium",
+      "tags": [
+        "constitutional monarchy",
+        "head of state",
+        "political system"
+      ]
+    },
+    {
+      "id": "c012",
+      "question": "Which statement about UK general elections is correct?",
+      "choices": [
+        "They must be held every four years exactly",
+        "They must be held at least every five years",
+        "They can only be held when the monarch agrees",
+        "They are held when opinion polls show a change is needed"
+      ],
+      "correctAnswer": 1,
+      "explanation": "UK general elections must be held at least every five years, though the Prime Minister can call one earlier. The next election must be held by 2029.",
+      "category": "Elections",
+      "difficulty": "easy",
+      "tags": [
+        "general elections",
+        "timing",
+        "parliament"
+      ]
+    },
+    {
+      "id": "c013",
+      "question": "The Cabinet is:",
+      "choices": [
+        "All Members of Parliament from the governing party",
+        "Senior government ministers chosen by the Prime Minister",
+        "Civil servants who run government departments",
+        "Judges who make legal decisions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Cabinet consists of senior government ministers, usually Secretaries of State, chosen by the Prime Minister to head major government departments.",
+      "category": "Government",
+      "difficulty": "medium",
+      "tags": [
+        "cabinet",
+        "ministers",
+        "prime minister"
+      ]
+    },
+    {
+      "id": "c014",
+      "question": "In a UK general election, voters:",
+      "choices": [
+        "Vote directly for the Prime Minister",
+        "Vote for one MP to represent their constituency",
+        "Vote for their preferred political party only",
+        "Vote for multiple candidates in order of preference"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In the first-past-the-post system, voters choose one candidate to be their MP. The party with the most MPs usually forms the government and their leader becomes Prime Minister.",
+      "category": "Elections",
+      "difficulty": "easy",
+      "tags": [
+        "voting",
+        "MP",
+        "constituency",
+        "FPTP"
+      ]
+    },
+    {
+      "id": "c015",
+      "question": "Parliamentary sovereignty in the UK means:",
+      "choices": [
+        "The monarch can overrule any law",
+        "Local councils have supreme power",
+        "Parliament is the supreme legal authority",
+        "The courts can overturn any Act of Parliament"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Parliamentary sovereignty is a key principle meaning Parliament is the supreme legal authority in the UK and can make or unmake any law.",
+      "category": "Constitutional System",
+      "difficulty": "hard",
+      "tags": [
+        "parliamentary sovereignty",
+        "constitution",
+        "legal authority"
+      ]
+    },
+    {
+      "id": "c016",
+      "question": "What is meant by the 'opposition' in Parliament?",
+      "choices": [
+        "MPs who always disagree with everything",
+        "The largest party that is not in government",
+        "Protesters outside Parliament",
+        "Civil servants who work against the government"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The opposition is the largest party not in government, led by the Leader of the Opposition. They scrutinise government policy and offer alternative proposals.",
+      "category": "Parliament",
+      "difficulty": "medium",
+      "tags": [
+        "opposition",
+        "parliament",
+        "government"
+      ]
+    },
+    {
+      "id": "c017",
+      "question": "The principle of 'checks and balances' in the UK system means:",
+      "choices": [
+        "The government balances the budget every year",
+        "Different parts of government limit each other's power",
+        "Elections are held at the same time",
+        "All political parties get equal time on TV"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Checks and balances ensure no single part of government has unlimited power. Parliament checks the executive, the Lords checks the Commons, and courts interpret law.",
+      "category": "Constitutional System",
+      "difficulty": "hard",
+      "tags": [
+        "checks and balances",
+        "separation of powers",
+        "constitution"
+      ]
+    },
+    {
+      "id": "c018",
+      "question": "A 'hung Parliament' occurs when:",
+      "choices": [
+        "Parliament is dissolved by the monarch",
+        "No party has an overall majority of MPs",
+        "The Prime Minister loses a vote of confidence",
+        "Too many MPs are absent from voting"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A hung Parliament occurs when no single party has more than half the MPs (326 or more). Parties may then form coalitions or minority governments.",
+      "category": "Government",
+      "difficulty": "medium",
+      "tags": [
+        "hung parliament",
+        "coalition",
+        "majority"
+      ]
+    }
+  ]
+}
