@@ -90,6 +90,31 @@ class UIController {
     }
 
     /**
+     * Load embedded game data (for packed version)
+     */
+    async loadEmbeddedGame() {
+        this.showScreen('loading');
+        
+        try {
+            // Use embedded data instead of fetching
+            if (window.EMBEDDED_GAME_DATA) {
+                const success = await this.game.loadQuestions(window.EMBEDDED_GAME_DATA);
+                if (success) {
+                    this.updateStartScreen();
+                    this.showScreen('start');
+                } else {
+                    this.showError('Failed to load embedded game data');
+                }
+            } else {
+                this.showError('No embedded game data found');
+            }
+        } catch (error) {
+            console.error('Error loading embedded game:', error);
+            this.showError('Failed to load embedded game data.');
+        }
+    }
+
+    /**
      * Update start screen with game metadata
      */
     updateStartScreen() {

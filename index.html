@@ -1,100 +1,1106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UK Democracy Education Game</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div id="game-container">
-        
-        <!-- Loading Screen -->
-        <div id="loading-screen" class="screen">
-            <div class="loading-content">
-                <h1>🏛️ Democracy Education Game</h1>
-                <div class="spinner"></div>
-                <p>Loading questions...</p>
-            </div>
-        </div>
+ <head>
+  <script>
+   window.EMBEDDED_GAME_DATA = {
+  "metadata": {
+    "title": "UK Democracy Basics",
+    "description": "Fundamental concepts about democracy and the UK political system",
+    "version": "1.0.0",
+    "targetAge": "12+",
+    "subject": "UK Politics and Democracy"
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "question": "What does 'democracy' mean?",
+      "choices": [
+        "Rule by the richest people",
+        "Rule by the people",
+        "Rule by the oldest person",
+        "Rule by the strongest person"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Democracy comes from the Greek words 'demos' (people) and 'kratos' (power/rule). It means that the people have the power to choose their government through voting.",
+      "category": "Basic Concepts",
+      "difficulty": "easy",
+      "tags": [
+        "democracy",
+        "definition",
+        "basics"
+      ]
+    },
+    {
+      "id": "q002",
+      "question": "At what age can you vote in UK general elections?",
+      "choices": [
+        "16",
+        "17",
+        "18",
+        "21"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In the UK, you must be 18 or over to vote in general elections. However, you can register to vote when you're 16 or 17 so you're ready when you turn 18.",
+      "category": "Voting",
+      "difficulty": "easy",
+      "tags": [
+        "voting",
+        "age",
+        "elections"
+      ]
+    },
+    {
+      "id": "q003",
+      "question": "How often are UK general elections held?",
+      "choices": [
+        "Every 3 years",
+        "Every 4 years",
+        "At least every 5 years",
+        "Every 6 years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier. The Fixed-term Parliaments Act 2011 set this rule, though it was repealed in 2022.",
+      "category": "Elections",
+      "difficulty": "medium",
+      "tags": [
+        "elections",
+        "timing",
+        "parliament"
+      ]
+    },
+    {
+      "id": "q004",
+      "question": "What is the name of the UK Parliament building?",
+      "choices": [
+        "Westminster Palace",
+        "Buckingham Palace",
+        "The Houses of Parliament",
+        "Number 10 Downing Street"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The UK Parliament meets in the Houses of Parliament (also called the Palace of Westminster) in London. It contains both the House of Commons and the House of Lords.",
+      "category": "Institutions",
+      "difficulty": "easy",
+      "tags": [
+        "parliament",
+        "buildings",
+        "london"
+      ]
+    },
+    {
+      "id": "q005",
+      "question": "Which of these is NOT a key feature of democracy?",
+      "choices": [
+        "Free and fair elections",
+        "Freedom of speech",
+        "Rule by one person forever",
+        "Protection of minority rights"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Democracy requires regular elections where power can change hands. Rule by one person forever (dictatorship) is the opposite of democracy, which depends on the people's ability to choose and change their leaders.",
+      "category": "Basic Concepts",
+      "difficulty": "medium",
+      "tags": [
+        "democracy",
+        "features",
+        "dictatorship"
+      ]
+    },
+    {
+      "id": "q006",
+      "question": "What is the role of MPs (Members of Parliament)?",
+      "choices": [
+        "To represent their local area in Parliament",
+        "To judge court cases",
+        "To run hospitals",
+        "To teach in schools"
+      ],
+      "correctAnswer": 0,
+      "explanation": "MPs represent the people in their local area (constituency) in the House of Commons. They debate laws, vote on government policies, and speak up for their constituents' concerns.",
+      "category": "Representatives",
+      "difficulty": "easy",
+      "tags": [
+        "MPs",
+        "representation",
+        "constituency"
+      ]
+    }
+  ]
+};
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   UK Democracy Education Game
+  </title>
+  <style>
+   /* Modern CSS Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        <!-- Start Screen -->
-        <div id="start-screen" class="screen" style="display: none;">
-            <div class="start-content">
-                <h1 id="game-title">UK Democracy Education Game</h1>
-                <p id="game-description">Learn about democracy and the UK political system through interactive questions.</p>
-                <div class="game-info">
-                    <p>📚 Target Age: 12+</p>
-                    <p>⏱️ No time limit - learn at your own pace</p>
-                    <p>🎯 Answer questions and discover the facts behind democracy</p>
-                </div>
-                <button id="start-button" class="primary-button">Start Learning</button>
-            </div>
-        </div>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        <!-- Game Screen -->
-        <div id="game-screen" class="screen" style="display: none;">
-            <div class="game-header">
-                <div id="question-counter" class="counter">Question 1 of 6</div>
-                <div id="score-display" class="score">Score: 0/0</div>
-            </div>
-            
-            <div class="question-container">
-                <h2 id="question-text" class="question">Loading question...</h2>
-                <div id="choices-container" class="choices">
-                    <!-- Choice buttons will be inserted here -->
-                </div>
-            </div>
-        </div>
+#game-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        <!-- Result Screen -->
-        <div id="result-screen" class="screen" style="display: none;">
-            <div class="result-content">
-                <div id="result-icon" class="result-icon">✅</div>
-                <h2 id="result-text" class="result-text">Correct!</h2>
-                <div class="explanation-container">
-                    <h3>Learn More:</h3>
-                    <p id="explanation-text" class="explanation">Explanation will appear here...</p>
-                </div>
-                <button id="next-button" class="primary-button">Next Question</button>
-            </div>
-        </div>
+/* Screen Management */
+.screen {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        <!-- Finish Screen -->
-        <div id="finish-screen" class="screen" style="display: none;">
-            <div class="finish-content">
-                <h1>🎉 Well Done!</h1>
-                <div class="final-stats">
-                    <div class="stat-item">
-                        <h2>Final Score</h2>
-                        <div id="final-score" class="big-number">0 out of 6</div>
-                    </div>
-                    <div class="stat-item">
-                        <h2>Accuracy</h2>
-                        <div id="final-percentage" class="big-number">0%</div>
-                    </div>
-                </div>
-                <div class="finish-message">
-                    <p>Great job learning about democracy! Every vote counts in making our democracy work.</p>
-                </div>
-                <button id="play-again-button" class="primary-button">Play Again</button>
-            </div>
-        </div>
+/* Loading Screen */
+.loading-content h1 {
+    color: #4a5568;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
 
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Start Screen */
+.start-content h1 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.start-content p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 30px;
+}
+
+.game-info {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.game-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Game Screen */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 12px;
+}
+
+.counter, .score {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+.question-container {
+    text-align: center;
+}
+
+.question {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+.choices {
+    display: grid;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.choice-button {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.choice-button:hover:not(:disabled) {
+    background: #edf2f7;
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.choice-button:disabled {
+    cursor: not-allowed;
+}
+
+.choice-button.correct {
+    background: #c6f6d5;
+    border-color: #38a169;
+    color: #22543d;
+}
+
+.choice-button.incorrect {
+    background: #fed7d7;
+    border-color: #e53e3e;
+    color: #742a2a;
+}
+
+/* Result Screen */
+.result-content {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.result-text {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2d3748;
+}
+
+.explanation-container {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.explanation-container h3 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.explanation {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2d3748;
+}
+
+/* Finish Screen */
+.finish-content h1 {
+    color: #2d3748;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.final-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.stat-item {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.stat-item h2 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.big-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.finish-message {
+    margin: 30px 0;
+}
+
+.finish-message p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    font-style: italic;
+}
+
+/* Buttons */
+.primary-button {
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.primary-button:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+/* Error Styling */
+.error {
+    text-align: center;
+    color: #e53e3e;
+}
+
+.error h2 {
+    margin-bottom: 20px;
+}
+
+.error button {
+    background: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #game-container {
+        padding: 10px;
+    }
+    
+    .screen {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .question {
+        font-size: 1.5rem;
+    }
+    
+    .choice-button {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .final-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .game-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .start-content h1,
+    .finish-content h1 {
+        font-size: 2rem;
+    }
+    
+    .question {
+        font-size: 1.3rem;
+    }
+    
+    .big-number {
+        font-size: 2rem;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <div id="game-container">
+   <!-- Loading Screen -->
+   <div class="screen" id="loading-screen">
+    <div class="loading-content">
+     <h1>
+      🏛️ Democracy Education Game
+     </h1>
+     <div class="spinner">
+     </div>
+     <p>
+      Loading questions...
+     </p>
     </div>
+   </div>
+   <!-- Start Screen -->
+   <div class="screen" id="start-screen" style="display: none;">
+    <div class="start-content">
+     <h1 id="game-title">
+      UK Democracy Education Game
+     </h1>
+     <p id="game-description">
+      Learn about democracy and the UK political system through interactive questions.
+     </p>
+     <div class="game-info">
+      <p>
+       📚 Target Age: 12+
+      </p>
+      <p>
+       ⏱️ No time limit - learn at your own pace
+      </p>
+      <p>
+       🎯 Answer questions and discover the facts behind democracy
+      </p>
+     </div>
+     <button class="primary-button" id="start-button">
+      Start Learning
+     </button>
+    </div>
+   </div>
+   <!-- Game Screen -->
+   <div class="screen" id="game-screen" style="display: none;">
+    <div class="game-header">
+     <div class="counter" id="question-counter">
+      Question 1 of 6
+     </div>
+     <div class="score" id="score-display">
+      Score: 0/0
+     </div>
+    </div>
+    <div class="question-container">
+     <h2 class="question" id="question-text">
+      Loading question...
+     </h2>
+     <div class="choices" id="choices-container">
+      <!-- Choice buttons will be inserted here -->
+     </div>
+    </div>
+   </div>
+   <!-- Result Screen -->
+   <div class="screen" id="result-screen" style="display: none;">
+    <div class="result-content">
+     <div class="result-icon" id="result-icon">
+      ✅
+     </div>
+     <h2 class="result-text" id="result-text">
+      Correct!
+     </h2>
+     <div class="explanation-container">
+      <h3>
+       Learn More:
+      </h3>
+      <p class="explanation" id="explanation-text">
+       Explanation will appear here...
+      </p>
+     </div>
+     <button class="primary-button" id="next-button">
+      Next Question
+     </button>
+    </div>
+   </div>
+   <!-- Finish Screen -->
+   <div class="screen" id="finish-screen" style="display: none;">
+    <div class="finish-content">
+     <h1>
+      🎉 Well Done!
+     </h1>
+     <div class="final-stats">
+      <div class="stat-item">
+       <h2>
+        Final Score
+       </h2>
+       <div class="big-number" id="final-score">
+        0 out of 6
+       </div>
+      </div>
+      <div class="stat-item">
+       <h2>
+        Accuracy
+       </h2>
+       <div class="big-number" id="final-percentage">
+        0%
+       </div>
+      </div>
+     </div>
+     <div class="finish-message">
+      <p>
+       Great job learning about democracy! Every vote counts in making our democracy work.
+      </p>
+     </div>
+     <button class="primary-button" id="play-again-button">
+      Play Again
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Scripts -->
+  <script>
+   /**
+ * Democracy Education Game Engine
+ * Core logic for flash-card quiz game
+ */
 
-    <!-- Scripts -->
-    <script src="js/game-engine.js"></script>
-    <script src="js/ui.js"></script>
-    <script>
-        // Initialize the game when page loads
+class GameEngine {
+    constructor() {
+        this.questions = [];
+        this.currentQuestionIndex = 0;
+        this.score = 0;
+        this.answered = 0;
+        this.gameState = 'loading'; // loading, ready, playing, question-answered, finished
+        this.currentQuestion = null;
+        this.userAnswer = null;
+        this.gameData = null;
+    }
+
+    /**
+     * Load questions from JSON data
+     * @param {Object} gameData - The complete game data object
+     */
+    async loadQuestions(gameData) {
+        try {
+            this.gameData = gameData;
+            this.questions = gameData.questions || [];
+            this.shuffleQuestions();
+            this.currentQuestionIndex = 0;
+            this.score = 0;
+            this.answered = 0;
+            this.gameState = 'ready';
+            this.currentQuestion = null;
+            this.userAnswer = null;
+            
+            console.log(`Loaded ${this.questions.length} questions`);
+            return true;
+        } catch (error) {
+            console.error('Error loading questions:', error);
+            this.gameState = 'error';
+            return false;
+        }
+    }
+
+    /**
+     * Shuffle questions for random order
+     */
+    shuffleQuestions() {
+        for (let i = this.questions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
+        }
+    }
+
+    /**
+     * Start the game
+     */
+    startGame() {
+        if (this.gameState !== 'ready') {
+            throw new Error('Game not ready to start');
+        }
+        
+        this.currentQuestionIndex = 0;
+        this.score = 0;
+        this.answered = 0;
+        this.gameState = 'playing';
+        this.loadCurrentQuestion();
+    }
+
+    /**
+     * Load the current question
+     */
+    loadCurrentQuestion() {
+        if (this.currentQuestionIndex >= this.questions.length) {
+            this.gameState = 'finished';
+            return null;
+        }
+
+        this.currentQuestion = this.questions[this.currentQuestionIndex];
+        this.userAnswer = null;
+        this.gameState = 'playing';
+        return this.currentQuestion;
+    }
+
+    /**
+     * Submit an answer for the current question
+     * @param {number} answerIndex - Index of the selected answer
+     */
+    submitAnswer(answerIndex) {
+        if (this.gameState !== 'playing' || !this.currentQuestion) {
+            throw new Error('No active question to answer');
+        }
+
+        if (answerIndex < 0 || answerIndex >= this.currentQuestion.choices.length) {
+            throw new Error('Invalid answer index');
+        }
+
+        this.userAnswer = answerIndex;
+        this.answered++;
+        
+        const isCorrect = answerIndex === this.currentQuestion.correctAnswer;
+        if (isCorrect) {
+            this.score++;
+        }
+
+        this.gameState = 'question-answered';
+        
+        return {
+            correct: isCorrect,
+            correctAnswerIndex: this.currentQuestion.correctAnswer,
+            correctAnswerText: this.currentQuestion.choices[this.currentQuestion.correctAnswer],
+            userAnswerText: this.currentQuestion.choices[answerIndex],
+            explanation: this.currentQuestion.explanation
+        };
+    }
+
+    /**
+     * Move to the next question
+     */
+    nextQuestion() {
+        if (this.gameState !== 'question-answered') {
+            throw new Error('Must answer current question first');
+        }
+
+        this.currentQuestionIndex++;
+        return this.loadCurrentQuestion();
+    }
+
+    /**
+     * Get current game statistics
+     */
+    getStats() {
+        return {
+            score: this.score,
+            answered: this.answered,
+            total: this.questions.length,
+            percentage: this.answered > 0 ? Math.round((this.score / this.answered) * 100) : 0,
+            remaining: this.questions.length - this.currentQuestionIndex,
+            gameState: this.gameState
+        };
+    }
+
+    /**
+     * Get current question data
+     */
+    getCurrentQuestion() {
+        return this.currentQuestion;
+    }
+
+    /**
+     * Reset the game to initial state
+     */
+    reset() {
+        this.currentQuestionIndex = 0;
+        this.score = 0;
+        this.answered = 0;
+        this.gameState = this.questions.length > 0 ? 'ready' : 'loading';
+        this.currentQuestion = null;
+        this.userAnswer = null;
+    }
+
+    /**
+     * Get game metadata
+     */
+    getMetadata() {
+        return this.gameData?.metadata || {};
+    }
+
+    /**
+     * Check if game is finished
+     */
+    isFinished() {
+        return this.gameState === 'finished';
+    }
+
+    /**
+     * Check if question has been answered
+     */
+    isQuestionAnswered() {
+        return this.gameState === 'question-answered';
+    }
+
+    /**
+     * Check if game is ready to play
+     */
+    isReady() {
+        return this.gameState === 'ready';
+    }
+
+    /**
+     * Check if currently playing
+     */
+    isPlaying() {
+        return this.gameState === 'playing';
+    }
+}
+  </script>
+  <script>
+   /**
+ * UI Controller for Democracy Education Game
+ * Handles all user interface interactions and updates
+ */
+
+class UIController {
+    constructor(gameEngine) {
+        this.game = gameEngine;
+        this.elements = {};
+        this.init();
+    }
+
+    /**
+     * Initialize UI elements and event listeners
+     */
+    init() {
+        // Cache DOM elements
+        this.elements = {
+            gameContainer: document.getElementById('game-container'),
+            loadingScreen: document.getElementById('loading-screen'),
+            startScreen: document.getElementById('start-screen'),
+            gameScreen: document.getElementById('game-screen'),
+            resultScreen: document.getElementById('result-screen'),
+            finishScreen: document.getElementById('finish-screen'),
+            
+            // Start screen
+            gameTitle: document.getElementById('game-title'),
+            gameDescription: document.getElementById('game-description'),
+            startButton: document.getElementById('start-button'),
+            
+            // Game screen
+            questionCounter: document.getElementById('question-counter'),
+            scoreDisplay: document.getElementById('score-display'),
+            questionText: document.getElementById('question-text'),
+            choicesContainer: document.getElementById('choices-container'),
+            
+            // Result screen
+            resultIcon: document.getElementById('result-icon'),
+            resultText: document.getElementById('result-text'),
+            explanationText: document.getElementById('explanation-text'),
+            nextButton: document.getElementById('next-button'),
+            
+            // Finish screen
+            finalScore: document.getElementById('final-score'),
+            finalPercentage: document.getElementById('final-percentage'),
+            playAgainButton: document.getElementById('play-again-button')
+        };
+
+        this.bindEvents();
+    }
+
+    /**
+     * Bind event listeners
+     */
+    bindEvents() {
+        if (this.elements.startButton) {
+            this.elements.startButton.addEventListener('click', () => this.startGame());
+        }
+        
+        if (this.elements.nextButton) {
+            this.elements.nextButton.addEventListener('click', () => this.nextQuestion());
+        }
+        
+        if (this.elements.playAgainButton) {
+            this.elements.playAgainButton.addEventListener('click', () => this.restartGame());
+        }
+    }
+
+    /**
+     * Load game data and initialize
+     */
+    async loadGame() {
+        this.showScreen('loading');
+        
+        try {
+            const response = await fetch('./data/questions.json');
+            const gameData = await response.json();
+            
+            const success = await this.game.loadQuestions(gameData);
+            if (success) {
+                this.updateStartScreen();
+                this.showScreen('start');
+            } else {
+                this.showError('Failed to load game data');
+            }
+        } catch (error) {
+            console.error('Error loading game:', error);
+            this.showError('Failed to load game. Please check your connection.');
+        }
+    }
+
+    /**
+     * Load embedded game data (for packed version)
+     */
+    async loadEmbeddedGame() {
+        this.showScreen('loading');
+        
+        try {
+            // Use embedded data instead of fetching
+            if (window.EMBEDDED_GAME_DATA) {
+                const success = await this.game.loadQuestions(window.EMBEDDED_GAME_DATA);
+                if (success) {
+                    this.updateStartScreen();
+                    this.showScreen('start');
+                } else {
+                    this.showError('Failed to load embedded game data');
+                }
+            } else {
+                this.showError('No embedded game data found');
+            }
+        } catch (error) {
+            console.error('Error loading embedded game:', error);
+            this.showError('Failed to load embedded game data.');
+        }
+    }
+
+    /**
+     * Update start screen with game metadata
+     */
+    updateStartScreen() {
+        const metadata = this.game.getMetadata();
+        
+        if (this.elements.gameTitle) {
+            this.elements.gameTitle.textContent = metadata.title || 'Democracy Education Game';
+        }
+        
+        if (this.elements.gameDescription) {
+            this.elements.gameDescription.textContent = 
+                metadata.description || 'Learn about democracy through interactive questions';
+        }
+    }
+
+    /**
+     * Start the game
+     */
+    startGame() {
+        this.game.startGame();
+        this.showQuestion();
+        this.showScreen('game');
+    }
+
+    /**
+     * Display current question
+     */
+    showQuestion() {
+        const question = this.game.getCurrentQuestion();
+        const stats = this.game.getStats();
+        
+        if (!question) {
+            this.showFinishScreen();
+            return;
+        }
+
+        // Update question counter and score
+        if (this.elements.questionCounter) {
+            this.elements.questionCounter.textContent = 
+                `Question ${stats.answered + 1} of ${stats.total}`;
+        }
+        
+        if (this.elements.scoreDisplay) {
+            this.elements.scoreDisplay.textContent = 
+                `Score: ${stats.score}/${stats.answered}`;
+        }
+
+        // Display question
+        if (this.elements.questionText) {
+            this.elements.questionText.textContent = question.question;
+        }
+
+        // Create choice buttons
+        this.createChoiceButtons(question.choices);
+    }
+
+    /**
+     * Create clickable choice buttons
+     */
+    createChoiceButtons(choices) {
+        if (!this.elements.choicesContainer) return;
+
+        this.elements.choicesContainer.innerHTML = '';
+        
+        choices.forEach((choice, index) => {
+            const button = document.createElement('button');
+            button.className = 'choice-button';
+            button.textContent = choice;
+            button.onclick = () => this.selectAnswer(index);
+            
+            this.elements.choicesContainer.appendChild(button);
+        });
+    }
+
+    /**
+     * Handle answer selection
+     */
+    selectAnswer(answerIndex) {
+        // Disable all choice buttons
+        const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
+        buttons.forEach(button => button.disabled = true);
+
+        // Submit answer and get result
+        const result = this.game.submitAnswer(answerIndex);
+        
+        // Highlight correct and incorrect answers
+        buttons.forEach((button, index) => {
+            if (index === result.correctAnswerIndex) {
+                button.classList.add('correct');
+            } else if (index === answerIndex && !result.correct) {
+                button.classList.add('incorrect');
+            }
+        });
+
+        // Show result after a brief delay
+        setTimeout(() => {
+            this.showResult(result);
+        }, 1500);
+    }
+
+    /**
+     * Show answer result and explanation
+     */
+    showResult(result) {
+        if (this.elements.resultIcon) {
+            this.elements.resultIcon.textContent = result.correct ? '✅' : '❌';
+        }
+        
+        if (this.elements.resultText) {
+            this.elements.resultText.textContent = result.correct 
+                ? 'Correct!' 
+                : `Incorrect. The correct answer was: ${result.correctAnswerText}`;
+        }
+        
+        if (this.elements.explanationText) {
+            this.elements.explanationText.textContent = result.explanation;
+        }
+
+        this.showScreen('result');
+    }
+
+    /**
+     * Move to next question
+     */
+    nextQuestion() {
+        const nextQ = this.game.nextQuestion();
+        
+        if (nextQ) {
+            this.showQuestion();
+            this.showScreen('game');
+        } else {
+            this.showFinishScreen();
+        }
+    }
+
+    /**
+     * Show final results
+     */
+    showFinishScreen() {
+        const stats = this.game.getStats();
+        
+        if (this.elements.finalScore) {
+            this.elements.finalScore.textContent = `${stats.score} out of ${stats.total}`;
+        }
+        
+        if (this.elements.finalPercentage) {
+            this.elements.finalPercentage.textContent = `${stats.percentage}%`;
+        }
+
+        this.showScreen('finish');
+    }
+
+    /**
+     * Restart the game
+     */
+    restartGame() {
+        this.game.reset();
+        this.startGame();
+    }
+
+    /**
+     * Show specific screen
+     */
+    showScreen(screenName) {
+        // Hide all screens
+        Object.values(this.elements).forEach(element => {
+            if (element && element.classList && element.classList.contains('screen')) {
+                element.style.display = 'none';
+            }
+        });
+
+        // Show requested screen
+        const screenMap = {
+            'loading': this.elements.loadingScreen,
+            'start': this.elements.startScreen,
+            'game': this.elements.gameScreen,
+            'result': this.elements.resultScreen,
+            'finish': this.elements.finishScreen
+        };
+
+        const targetScreen = screenMap[screenName];
+        if (targetScreen) {
+            targetScreen.style.display = 'block';
+        }
+    }
+
+    /**
+     * Show error message
+     */
+    showError(message) {
+        // Simple error display - could be enhanced with a proper error screen
+        if (this.elements.loadingScreen) {
+            this.elements.loadingScreen.innerHTML = `
+                <div class="error">
+                    <h2>Error</h2>
+                    <p>${message}</p>
+                    <button onclick="location.reload()">Retry</button>
+                </div>
+            `;
+        }
+    }
+}
+  </script>
+  <script>
+   // Initialize the game when page loads
         document.addEventListener('DOMContentLoaded', function() {
             const gameEngine = new GameEngine();
             const uiController = new UIController(gameEngine);
             
             // Start loading the game
-            uiController.loadGame();
+            uiController.loadEmbeddedGame();
         });
-    </script>
-</body>
+  </script>
+ </body>
 </html>
