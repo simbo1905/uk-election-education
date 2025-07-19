@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Democracy Education Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-content">
+                <h1>🏛️ Democracy Education Game</h1>
+                <div class="spinner"></div>
+                <p>Loading questions...</p>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen" style="display: none;">
+            <div class="start-content">
+                <h1 id="game-title">UK Democracy Education Game</h1>
+                <p id="game-description">Learn about democracy and the UK political system through interactive questions.</p>
+                <div class="game-info">
+                    <p>📚 Target Age: 12+</p>
+                    <p>⏱️ No time limit - learn at your own pace</p>
+                    <p>🎯 Answer questions and discover the facts behind democracy</p>
+                </div>
+                <button id="start-button" class="primary-button">Start Learning</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen" style="display: none;">
+            <div class="game-header">
+                <div id="question-counter" class="counter">Question 1 of 6</div>
+                <div id="score-display" class="score">Score: 0/0</div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text" class="question">Loading question...</h2>
+                <div id="choices-container" class="choices">
+                    <!-- Choice buttons will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen" style="display: none;">
+            <div class="result-content">
+                <div id="result-icon" class="result-icon">✅</div>
+                <h2 id="result-text" class="result-text">Correct!</h2>
+                <div class="explanation-container">
+                    <h3>Learn More:</h3>
+                    <p id="explanation-text" class="explanation">Explanation will appear here...</p>
+                </div>
+                <button id="next-button" class="primary-button">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Finish Screen -->
+        <div id="finish-screen" class="screen" style="display: none;">
+            <div class="finish-content">
+                <h1>🎉 Well Done!</h1>
+                <div class="final-stats">
+                    <div class="stat-item">
+                        <h2>Final Score</h2>
+                        <div id="final-score" class="big-number">0 out of 6</div>
+                    </div>
+                    <div class="stat-item">
+                        <h2>Accuracy</h2>
+                        <div id="final-percentage" class="big-number">0%</div>
+                    </div>
+                </div>
+                <div class="finish-message">
+                    <p>Great job learning about democracy! Every vote counts in making our democracy work.</p>
+                </div>
+                <button id="play-again-button" class="primary-button">Play Again</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/game-engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        // Initialize the game when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameEngine = new GameEngine();
+            const uiController = new UIController(gameEngine);
+            
+            // Start loading the game
+            uiController.loadGame();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "title": "UK Democracy Basics",
+    "description": "Fundamental concepts about democracy and the UK political system",
+    "version": "1.0.0",
+    "targetAge": "12+",
+    "subject": "UK Politics and Democracy"
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "question": "What does 'democracy' mean?",
+      "choices": [
+        "Rule by the richest people",
+        "Rule by the people",
+        "Rule by the oldest person",
+        "Rule by the strongest person"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Democracy comes from the Greek words 'demos' (people) and 'kratos' (power/rule). It means that the people have the power to choose their government through voting.",
+      "category": "Basic Concepts",
+      "difficulty": "easy",
+      "tags": ["democracy", "definition", "basics"]
+    },
+    {
+      "id": "q002",
+      "question": "At what age can you vote in UK general elections?",
+      "choices": [
+        "16",
+        "17",
+        "18",
+        "21"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In the UK, you must be 18 or over to vote in general elections. However, you can register to vote when you're 16 or 17 so you're ready when you turn 18.",
+      "category": "Voting",
+      "difficulty": "easy",
+      "tags": ["voting", "age", "elections"]
+    },
+    {
+      "id": "q003",
+      "question": "How often are UK general elections held?",
+      "choices": [
+        "Every 3 years",
+        "Every 4 years",
+        "At least every 5 years",
+        "Every 6 years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "UK general elections must be held at least every 5 years, though the Prime Minister can call an election earlier. The Fixed-term Parliaments Act 2011 set this rule, though it was repealed in 2022.",
+      "category": "Elections",
+      "difficulty": "medium",
+      "tags": ["elections", "timing", "parliament"]
+    },
+    {
+      "id": "q004",
+      "question": "What is the name of the UK Parliament building?",
+      "choices": [
+        "Westminster Palace",
+        "Buckingham Palace",
+        "The Houses of Parliament",
+        "Number 10 Downing Street"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The UK Parliament meets in the Houses of Parliament (also called the Palace of Westminster) in London. It contains both the House of Commons and the House of Lords.",
+      "category": "Institutions",
+      "difficulty": "easy",
+      "tags": ["parliament", "buildings", "london"]
+    },
+    {
+      "id": "q005",
+      "question": "Which of these is NOT a key feature of democracy?",
+      "choices": [
+        "Free and fair elections",
+        "Freedom of speech",
+        "Rule by one person forever",
+        "Protection of minority rights"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Democracy requires regular elections where power can change hands. Rule by one person forever (dictatorship) is the opposite of democracy, which depends on the people's ability to choose and change their leaders.",
+      "category": "Basic Concepts",
+      "difficulty": "medium",
+      "tags": ["democracy", "features", "dictatorship"]
+    },
+    {
+      "id": "q006",
+      "question": "What is the role of MPs (Members of Parliament)?",
+      "choices": [
+        "To represent their local area in Parliament",
+        "To judge court cases",
+        "To run hospitals",
+        "To teach in schools"
+      ],
+      "correctAnswer": 0,
+      "explanation": "MPs represent the people in their local area (constituency) in the House of Commons. They debate laws, vote on government policies, and speak up for their constituents' concerns.",
+      "category": "Representatives",
+      "difficulty": "easy",
+      "tags": ["MPs", "representation", "constituency"]
+    }
+  ]
+}
