@@ -1,5 +1,7 @@
 # UK Democracy Education Game
 
+This educational app is now live at [https://simbo1905.github.io/uk-election-education/](https://simbo1905.github.io/uk-election-education/)
+
 A vanilla JavaScript flash-card game to teach children (12+) about democracy and the democratic process in the UK.
 
 ## Features
@@ -36,7 +38,7 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install pyppeteer jinja2 jsonschema
 ```
 
-Run tests:
+Run Puppeteer web browser tests using chrome dev tools:
 ```bash
 python tests/puppeteer/test_game.py
 ```
