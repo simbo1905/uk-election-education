@@ -22,31 +22,20 @@ class UIController {
             gameScreen: document.getElementById('game-screen'),
             resultScreen: document.getElementById('result-screen'),
             finishScreen: document.getElementById('finish-screen'),
-            
-            // Start screen
             gameTitle: document.getElementById('game-title'),
             gameDescription: document.getElementById('game-description'),
-            startButton: document.getElementById('start-button'),
-            questionSetSelector: document.getElementById('question-set-selector'),
-            targetAge: document.getElementById('target-age'),
-            questionCount: document.getElementById('question-count'),
-            
-            // Game screen
             questionCounter: document.getElementById('question-counter'),
             scoreDisplay: document.getElementById('score-display'),
             questionText: document.getElementById('question-text'),
             choicesContainer: document.getElementById('choices-container'),
-            
-            // Result screen
             resultIcon: document.getElementById('result-icon'),
             resultText: document.getElementById('result-text'),
             explanationText: document.getElementById('explanation-text'),
             nextButton: document.getElementById('next-button'),
-            
-            // Finish screen
             finalScore: document.getElementById('final-score'),
             finalPercentage: document.getElementById('final-percentage'),
-            playAgainButton: document.getElementById('play-again-button')
+            playAgainButton: document.getElementById('play-again-button'),
+            questionSetTilesContainer: document.getElementById('question-set-tiles')
         };
 
         this.bindEvents();
@@ -56,20 +45,12 @@ class UIController {
      * Bind event listeners
      */
     bindEvents() {
-        if (this.elements.startButton) {
-            this.elements.startButton.addEventListener('click', () => this.startGame());
-        }
-        
         if (this.elements.nextButton) {
             this.elements.nextButton.addEventListener('click', () => this.nextQuestion());
         }
         
         if (this.elements.playAgainButton) {
             this.elements.playAgainButton.addEventListener('click', () => this.restartGame());
-        }
-        
-        if (this.elements.questionSetSelector) {
-            this.elements.questionSetSelector.addEventListener('change', (e) => this.onQuestionSetChange(e.target.value));
         }
     }
 
@@ -173,45 +154,37 @@ class UIController {
     }
 
     /**
-     * Update start screen with multiple question sets
+     * Update start screen with multiple question sets as tiles
      */
     updateStartScreenWithQuestionSets() {
-        if (this.questionSets) {
-            // Update selector options (already done in template)
-            
-            // Update current question set info
-            this.updateQuestionSetInfo();
-        }
-    }
+        if (this.questionSets && this.elements.questionSetTilesContainer) {
+            this.elements.questionSetTilesContainer.innerHTML = ''; // Clear existing tiles
 
-    /**
-     * Update question set specific information
-     */
-    updateQuestionSetInfo() {
-        if (!this.currentQuestionSetKey || !this.questionSets) return;
-        
-        const currentSet = this.questionSets[this.currentQuestionSetKey];
-        const metadata = currentSet.metadata || {};
-        
-        // Update title and description
-        if (this.elements.gameTitle) {
-            this.elements.gameTitle.textContent = metadata.title || 'Democracy Education Game';
-        }
-        
-        if (this.elements.gameDescription) {
-            this.elements.gameDescription.textContent = 
-                metadata.description || 'Learn about democracy through interactive questions';
-        }
-        
-        // Update target age
-        if (this.elements.targetAge) {
-            this.elements.targetAge.textContent = metadata.targetAge || '12+';
-        }
-        
-        // Update question count
-        if (this.elements.questionCount) {
-            const questionCount = currentSet.questions ? currentSet.questions.length : 0;
-            this.elements.questionCount.textContent = questionCount;
+            for (const key in this.questionSets) {
+                if (Object.hasOwnProperty.call(this.questionSets, key)) {
+                    const questionSet = this.questionSets[key];
+                    const metadata = questionSet.metadata || {};
+
+                    const tile = document.createElement('div');
+                    tile.className = 'question-set-tile';
+                    tile.dataset.key = key;
+
+                    const title = document.createElement('h3');
+                    title.className = 'tile-title';
+                    title.textContent = metadata.title || key.replace(/_/g, ' ');
+
+                    const description = document.createElement('p');
+                    description.className = 'tile-description';
+                    description.textContent = metadata.description || 'A set of questions on this topic.';
+
+                    tile.appendChild(title);
+                    tile.appendChild(description);
+
+                    tile.addEventListener('click', () => this.startGame(key));
+
+                    this.elements.questionSetTilesContainer.appendChild(tile);
+                }
+            }
         }
     }
 
@@ -219,22 +192,30 @@ class UIController {
      * Update start screen with game metadata
      */
     updateStartScreen() {
-        const metadata = this.game.getMetadata();
-        
+        // This function is now simplified as tiles handle most of the info.
+        // We can set a generic title or description if needed.
         if (this.elements.gameTitle) {
-            this.elements.gameTitle.textContent = metadata.title || 'Democracy Education Game';
+            this.elements.gameTitle.textContent = "UK Democracy Education Game";
         }
-        
         if (this.elements.gameDescription) {
-            this.elements.gameDescription.textContent = 
-                metadata.description || 'Learn about democracy through interactive questions';
+            this.elements.gameDescription.textContent = "Select a topic to begin your learning journey.";
         }
     }
 
     /**
-     * Start the game
+     * Start the game with a specific question set
+     * @param {string} questionSetKey - The key for the selected question set
      */
-    startGame() {
+    async startGame(questionSetKey) {
+        if (!questionSetKey || !this.questionSets[questionSetKey]) {
+            this.showError('Please select a valid question set to start.');
+            return;
+        }
+        
+        this.currentQuestionSetKey = questionSetKey;
+        const selectedSet = this.questionSets[this.currentQuestionSetKey];
+
+        await this.game.loadQuestions(selectedSet);
         this.game.startGame();
         this.showQuestion();
         this.showScreen('game');
@@ -378,11 +359,11 @@ class UIController {
     }
 
     /**
-     * Restart the game
+     * Restart the game by reloading the page.
      */
     restartGame() {
-        this.game.reset();
-        this.startGame();
+        console.log('🔄 [UI] Restarting game by reloading the page.');
+        location.reload();
     }
 
     /**

@@ -10,7 +10,7 @@ from pathlib import Path
 from pyppeteer import launch
 
 # Add project root to sys.path to allow importing pack_project
-project_root_for_import = Path(__file__).parent.parent.parent
+project_root_for_import = Path(__file__).parent.parent
 sys.path.append(str(project_root_for_import))
 import pack_project
 
@@ -18,7 +18,7 @@ class LandingPageTester:
     def __init__(self):
         self.browser = None
         self.page = None
-        self.project_root = Path(__file__).parent.parent.parent
+        self.project_root = Path(__file__).parent.parent
         self.game_url = f"file://{self.project_root}/index.html"
         self.build_info = None
 

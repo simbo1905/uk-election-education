@@ -43,10 +43,21 @@ Run Puppeteer web browser tests using chrome dev tools:
 python tests/puppeteer/test_game.py
 ```
 
-Build project:
+## Build and Test Workflow
+
+To run tests with guaranteed fresh builds:
+
 ```bash
-python pack_project.py
+bash run_tests.sh
 ```
+
+This script will:
+
+1. Build the project (runs pack_project.py)
+2. Run all tests
+3. Verify build timestamp matches
+
+⚠️ WARNING: Never run tests directly without building first. The test suite runs against the bundled index.html file, so testing unbundled code will lead to inconsistent results.
 
 Verify build worked:
 ```bash

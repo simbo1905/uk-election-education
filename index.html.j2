@@ -22,6 +22,7 @@
         
         // Debug logging
         console.log("🏗️ Build info:", window.BUILD_INFO);
+        console.log("🚀 Page loaded and ready.");
     </script>
     
     <!-- Embedded CSS -->
@@ -44,26 +45,12 @@
         <div class="screen" id="start-screen" style="display: none;">
             <div class="start-content">
                 <h1 id="game-title">UK Democracy Education Game</h1>
-                <p id="game-description">Learn about democracy and the UK political system through interactive questions.</p>
+                <p id="game-description">Select a topic to begin.</p>
                 
-                <!-- Question Set Selector -->
-                <div class="question-set-selector-container">
-                    <label for="question-set-selector">Choose a question set:</label>
-                    <select id="question-set-selector" class="question-set-selector">
-                        {% for key, data in question_sets.items() %}
-                        <option value="{{ key }}">{{ data.metadata.title }}</option>
-                        {% endfor %}
-                    </select>
+                <!-- Question Set Tiles -->
+                <div id="question-set-tiles" class="question-set-tiles-container">
+                    <!-- Tiles will be dynamically inserted here -->
                 </div>
-                
-                <div class="game-info">
-                    <p>📚 Target Age: <span id="target-age">12+</span></p>
-                    <p>⏱️ No time limit - learn at your own pace</p>
-                    <p>🎯 Answer questions and discover the facts behind democracy</p>
-                    <p>📊 Questions: <span id="question-count">6</span></p>
-                </div>
-                
-                <button class="primary-button" id="start-button">Start Learning</button>
             </div>
         </div>
         
