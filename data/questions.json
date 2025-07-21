@@ -4,7 +4,8 @@
     "description": "Fundamental concepts about democracy and the UK political system",
     "version": "1.0.0",
     "targetAge": "12+",
-    "subject": "UK Politics and Democracy"
+    "subject": "UK Politics and Democracy",
+    "mode": "hard"
   },
   "questions": [
     {

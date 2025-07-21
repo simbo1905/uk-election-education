@@ -4,7 +4,8 @@
     "description": "Comprehensive quiz covering all levels from basic to expert knowledge of UK democracy",
     "version": "1.0.0",
     "targetAge": "12+",
-    "subject": "UK Democracy - All Levels"
+    "subject": "UK Democracy - All Levels",
+    "mode": "hard"
   },
   "questions": [
     {

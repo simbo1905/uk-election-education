@@ -10,9 +10,13 @@
         "description": { "type": "string" },
         "version": { "type": "string" },
         "targetAge": { "type": "string" },
-        "subject": { "type": "string" }
+        "subject": { "type": "string" },
+        "mode": {
+          "type": "string",
+          "enum": ["easy", "hard"]
+        }
       },
-      "required": ["title", "version", "targetAge", "subject"]
+      "required": ["title", "version", "targetAge", "subject", "mode"]
     },
     "questions": {
       "type": "array",

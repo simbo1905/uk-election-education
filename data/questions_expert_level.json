@@ -4,7 +4,8 @@
     "description": "Challenging questions about UK democracy designed to test detailed knowledge",
     "version": "1.0.0",
     "targetAge": "16+",
-    "subject": "Advanced UK Democracy and Government"
+    "subject": "Advanced UK Democracy and Government",
+    "mode": "hard"
   },
   "questions": [
     {

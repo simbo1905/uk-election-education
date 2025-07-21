@@ -4,7 +4,8 @@
     "description": "Simple, clear questions about UK democracy for children aged 12+",
     "version": "1.0.0",
     "targetAge": "12+",
-    "subject": "UK Democracy and Government"
+    "subject": "UK Democracy and Government",
+    "mode": "easy"
   },
   "questions": [
     {

@@ -4,7 +4,8 @@
     "description": "Questions about UK democracy at the level of the official Life in the UK citizenship test",
     "version": "1.0.0",
     "targetAge": "18+",
-    "subject": "UK Democracy and Constitutional System"
+    "subject": "UK Democracy and Constitutional System",
+    "mode": "hard"
   },
   "questions": [
     {
