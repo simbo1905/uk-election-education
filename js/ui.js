@@ -281,19 +281,31 @@ class UIController {
     selectAnswer(answerIndex) {
         console.log(`selectAnswer called with index: ${answerIndex}`);
         
-        // Disable all choice buttons
-        const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
-        buttons.forEach(button => button.disabled = true);
-
-        // Submit answer and get result
         const result = this.game.submitAnswer(answerIndex);
         console.log('Answer submitted, result:', result);
+
+        const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
+        const selectedButton = buttons[answerIndex];
+
+        // Easy mode, incorrect answer: just mark it red and stop.
+        if (result.mode === 'easy' && !result.correct) {
+            selectedButton.classList.add('incorrect');
+            selectedButton.disabled = true; // Prevent clicking the same wrong answer
+            console.log('Easy mode, incorrect answer. Allowing another try.');
+            return; // Stop here, don't show result screen
+        }
+
+        // Hard mode OR Correct answer in easy mode: proceed to result screen.
+        
+        // Disable all choice buttons
+        buttons.forEach(button => button.disabled = true);
         
         // Highlight correct and incorrect answers
         buttons.forEach((button, index) => {
             if (index === result.correctAnswerIndex) {
                 button.classList.add('correct');
             } else if (index === answerIndex && !result.correct) {
+                // This case only happens in hard mode now
                 button.classList.add('incorrect');
             }
         });

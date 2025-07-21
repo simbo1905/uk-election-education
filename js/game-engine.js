@@ -77,6 +77,7 @@ class GameEngine {
         this.currentQuestion = this.questions[this.currentQuestionIndex];
         this.userAnswer = null;
         this.gameState = 'playing';
+        console.log(`🎯 DEBUG: Question ${this.currentQuestionIndex + 1} correct answer is index ${this.currentQuestion.correctAnswer}`);
         return this.currentQuestion;
     }
 
@@ -94,9 +95,23 @@ class GameEngine {
         }
 
         this.userAnswer = answerIndex;
+        const isCorrect = answerIndex === this.currentQuestion.correctAnswer;
+        const mode = this.getMetadata().mode || 'hard';
+
+        // In easy mode, if the answer is incorrect, we don't advance the game state.
+        // We just provide feedback that the answer was wrong.
+        if (mode === 'easy' && !isCorrect) {
+            return {
+                correct: false,
+                correctAnswerIndex: this.currentQuestion.correctAnswer,
+                userAnswerText: this.currentQuestion.choices[answerIndex],
+                explanation: 'That wasn\'t correct. Try another answer!',
+                mode: 'easy'
+            };
+        }
+        
         this.answered++;
         
-        const isCorrect = answerIndex === this.currentQuestion.correctAnswer;
         if (isCorrect) {
             this.score++;
         }
@@ -108,7 +123,8 @@ class GameEngine {
             correctAnswerIndex: this.currentQuestion.correctAnswer,
             correctAnswerText: this.currentQuestion.choices[this.currentQuestion.correctAnswer],
             userAnswerText: this.currentQuestion.choices[answerIndex],
-            explanation: this.currentQuestion.explanation
+            explanation: this.currentQuestion.explanation,
+            mode: mode
         };
     }
 

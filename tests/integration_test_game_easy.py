@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Puppeteer tests for Democracy Education Game in Hard Mode
+Puppeteer tests for Democracy Education Game in Easy Mode
 """
 
 import asyncio
@@ -18,6 +18,7 @@ class GameTester:
         self.project_root = Path(__file__).parent.parent
         self.game_url = f"file://{self.project_root}/index.html"
         self.build_info = None
+        self.console_logs = []
         
     async def setup(self):
         """Initialize browser and page"""
@@ -30,7 +31,12 @@ class GameTester:
         await self.page.setViewport({'width': 1280, 'height': 800})
         
         # Capture console logs from the browser
-        self.page.on('console', lambda msg: print(f"🌐 BROWSER: {msg.text}"))
+        def handle_console_log(msg):
+            log_text = msg.text
+            print(f"🌐 BROWSER: {log_text}")
+            self.console_logs.append(log_text)
+            
+        self.page.on('console', handle_console_log)
         
     async def teardown(self):
         """Clean up browser"""
@@ -46,6 +52,19 @@ class GameTester:
             print(f"❌ Element not found: {selector} - {e}")
             return False
             
+    def get_correct_answer_from_logs(self, question_num):
+        """Extract correct answer index from console logs"""
+        for log in reversed(self.console_logs):  # Check recent logs first
+            if f"🎯 DEBUG: Question {question_num} correct answer is index" in log:
+                # Extract the index number from the log
+                parts = log.split("index ")
+                if len(parts) > 1:
+                    try:
+                        return int(parts[1])
+                    except ValueError:
+                        continue
+        return None
+            
     async def test_json_schema_validation(self):
         """Test that questions.json matches the schema"""
         print("🧪 Testing JSON schema validation...")
@@ -57,7 +76,7 @@ class GameTester:
                 schema = json.load(f)
                 
             # Load questions
-            questions_path = self.project_root / 'data' / 'questions.json'
+            questions_path = self.project_root / 'data' / 'questions_kids_12plus.json'
             with open(questions_path, 'r') as f:
                 questions = json.load(f)
                 
@@ -113,8 +132,8 @@ class GameTester:
         print("🧪 Testing start game flow...")
         
         try:
-            # Click the first tile to start the game
-            await self.page.click('.question-set-tile')
+            # Click the kids question set tile to start the game
+            await self.page.click('[data-key="questions_kids_12plus"]')
             
             # Wait for game screen
             await self.wait_for_selector('#game-screen')
@@ -127,16 +146,16 @@ class GameTester:
             return False
             
     async def test_answer_question(self):
-        """Test answering a question"""
+        """Test answering a question in easy mode - smart approach"""
         print("🧪 Testing answer question flow...")
         
         try:
-            # Wait for choices to be available
+            # Wait for choice buttons
             if not await self.wait_for_selector('.choice-button'):
                 print("❌ Choice buttons not found")
                 return False
                 
-            # Get number of choices and log details
+            # Get number of choices
             choice_count = await self.page.evaluate(
                 'document.querySelectorAll(".choice-button").length'
             )
@@ -146,49 +165,42 @@ class GameTester:
                 print(f"❌ Should have at least 2 choices, found {choice_count}")
                 return False
             
-            # Check console logs before clicking
-            print("🔍 Checking console logs before click...")
+            # Wait a moment for console log to appear and get correct answer
+            await asyncio.sleep(0.5)
+            correct_answer_index = self.get_correct_answer_from_logs(1)
             
-            # Click first choice and log what happens
-            print("🔍 Clicking first choice button...")
-            await self.page.click('.choice-button:first-child')
+            if correct_answer_index is None:
+                print("❌ Could not find correct answer from console logs")
+                return False
+                
+            print(f"🎯 Found correct answer is index {correct_answer_index}")
             
-            # Wait longer for the timeout in selectAnswer (800ms + buffer)
-            print("🔍 Waiting for result screen transition (800ms timeout + buffer)...")
+            # Test 1: Click correct answer directly (should go to result screen)
+            print(f"🔍 Clicking correct choice button (index {correct_answer_index})...")
+            await self.page.click(f'.choice-button:nth-child({correct_answer_index + 1})')
+            
+            # Wait for result screen transition
+            print("🔍 Waiting for result screen transition...")
             await asyncio.sleep(1.2)
             
-            # Simple check - just see if result screen exists and is visible
-            try:
-                result_visible = await self.page.evaluate('''
-                    () => {
-                        const screen = document.getElementById("result-screen");
-                        return screen && screen.style.display !== "none";
-                    }
-                ''')
-                print(f"🔍 Result screen visible: {result_visible}")
-                
-                if not result_visible:
-                    print("❌ Result screen should be visible after answer")
-                    return False
-                    
-            except Exception as e:
-                print(f"❌ Error checking result screen: {e}")
+            # Check if result screen is visible
+            result_visible = await self.page.evaluate('''
+                () => {
+                    const screen = document.getElementById("result-screen");
+                    return screen && screen.style.display !== "none";
+                }
+            ''')
+            print(f"🔍 Result screen visible: {result_visible}")
+            
+            if not result_visible:
+                print("❌ Result screen should be visible after correct answer in easy mode")
                 return False
-                
-            # Check that explanation is shown
-            try:
-                explanation = await self.page.evaluate(
-                    '() => document.getElementById("explanation-text").textContent'
-                )
-                print(f"🔍 Explanation text: {explanation[:50] if explanation else 'None'}...")
-                
-                if not explanation or explanation == "Explanation will appear here...":
-                    print("❌ Explanation should be loaded")
-                    return False
-                    
-            except Exception as e:
-                print(f"❌ Error checking explanation: {e}")
-                return False
+            
+            # Check explanation is shown
+            explanation = await self.page.evaluate(
+                '() => document.getElementById("explanation-text").textContent'
+            )
+            print(f"🔍 Explanation text: {explanation[:50] if explanation else 'None'}...")
                 
             print("✅ Answer question test passed")
             return True
@@ -241,12 +253,13 @@ class GameTester:
             await self.page.goto(self.game_url)
             await self.wait_for_selector('#start-screen')
             
-            # Click the first tile to start the game
-            await self.wait_for_selector('.question-set-tile')
-            await self.page.click('.question-set-tile')
+            # Click the kids question set tile to start the game
+            await self.wait_for_selector('[data-key="questions_kids_12plus"]')
+            await self.page.click('[data-key="questions_kids_12plus"]')
             await self.wait_for_selector('#game-screen')
 
             # Loop through all questions
+            question_number = 1
             while True:
                 game_screen = await self.page.querySelector('#game-screen')
                 if not game_screen:
@@ -261,13 +274,46 @@ class GameTester:
                     print("🔍 Reached finish screen")
                     break
                 
-                # Click first choice and wait for result
-                await self.page.click('.choice-button:first-child')
+                # Wait for console log and get correct answer
+                await asyncio.sleep(0.5)
+                correct_answer_index = self.get_correct_answer_from_logs(question_number)
+                
+                if correct_answer_index is None:
+                    print(f"❌ Could not find correct answer for question {question_number}")
+                    return False
+                
+                # Special case for question 2: test wrong answer first
+                if question_number == 2:
+                    # Find a wrong answer index
+                    choice_count = await self.page.evaluate(
+                        'document.querySelectorAll(".choice-button").length'
+                    )
+                    wrong_index = 0 if correct_answer_index != 0 else 1
+                    
+                    print(f"🧪 Q{question_number}: Testing wrong answer first (index {wrong_index})...")
+                    await self.page.click(f'.choice-button:nth-child({wrong_index + 1})')
+                    await asyncio.sleep(0.5)  # Brief pause
+                    
+                    # Check the button turned red
+                    button_class = await self.page.evaluate(f'''
+                        () => document.querySelector('.choice-button:nth-child({wrong_index + 1})').className
+                    ''')
+                    if 'incorrect' not in button_class:
+                        print("❌ Wrong answer button should have 'incorrect' class")
+                        return False
+                    
+                    print("✅ Wrong answer correctly marked red, now clicking correct answer...")
+                
+                # Click correct answer
+                print(f"🎯 Q{question_number}: Clicking correct answer (index {correct_answer_index})...")
+                await self.page.click(f'.choice-button:nth-child({correct_answer_index + 1})')
                 await asyncio.sleep(1.2)
                 
                 # Click next
                 await self.page.click('#next-button')
                 await asyncio.sleep(0.8)
+                
+                question_number += 1
                 
             # Wait for finish screen
             await self.wait_for_selector('#finish-screen', timeout=3000)

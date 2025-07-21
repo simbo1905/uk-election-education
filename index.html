@@ -14,7 +14,8 @@
       "description": "Questions about UK democracy at the level of the official Life in the UK citizenship test",
       "version": "1.0.0",
       "targetAge": "18+",
-      "subject": "UK Democracy and Constitutional System"
+      "subject": "UK Democracy and Constitutional System",
+      "mode": "hard"
     },
     "questions": [
       {
@@ -369,7 +370,8 @@
       "description": "Comprehensive quiz covering all levels from basic to expert knowledge of UK democracy",
       "version": "1.0.0",
       "targetAge": "12+",
-      "subject": "UK Democracy - All Levels"
+      "subject": "UK Democracy - All Levels",
+      "mode": "hard"
     },
     "questions": [
       {
@@ -1391,7 +1393,8 @@
       "description": "Fundamental concepts about democracy and the UK political system",
       "version": "1.0.0",
       "targetAge": "12+",
-      "subject": "UK Politics and Democracy"
+      "subject": "UK Politics and Democracy",
+      "mode": "hard"
     },
     "questions": [
       {
@@ -1516,7 +1519,8 @@
       "description": "Simple, clear questions about UK democracy for children aged 12+",
       "version": "1.0.0",
       "targetAge": "12+",
-      "subject": "UK Democracy and Government"
+      "subject": "UK Democracy and Government",
+      "mode": "easy"
     },
     "questions": [
       {
@@ -1813,7 +1817,8 @@
       "description": "Challenging questions about UK democracy designed to test detailed knowledge",
       "version": "1.0.0",
       "targetAge": "16+",
-      "subject": "Advanced UK Democracy and Government"
+      "subject": "Advanced UK Democracy and Government",
+      "mode": "hard"
     },
     "questions": [
       {
@@ -2112,7 +2117,8 @@
     "description": "Fundamental concepts about democracy and the UK political system",
     "version": "1.0.0",
     "targetAge": "12+",
-    "subject": "UK Politics and Democracy"
+    "subject": "UK Politics and Democracy",
+    "mode": "hard"
   },
   "questions": [
     {
@@ -2235,9 +2241,9 @@
         
         // Build information
         window.BUILD_INFO = {
-            timestamp: "2025-07-21T07:24:12.661391",
-            timestampUnix: 1753079052,
-            version: "git-8edeaf8"
+            timestamp: "2025-07-21T19:16:32.725343",
+            timestampUnix: 1753121792,
+            version: "git-5da2d5f"
         };
         
         // Debug logging
@@ -2763,7 +2769,7 @@ body {
     
     <!-- Build info footer -->
     <div class="build-info">
-        <small>vgit-8edeaf8 • Built: 2025-07-21T07:24:12</small>
+        <small>vgit-5da2d5f • Built: 2025-07-21T19:16:32</small>
     </div>
     
     <!-- Embedded JavaScript -->
@@ -2847,6 +2853,7 @@ class GameEngine {
         this.currentQuestion = this.questions[this.currentQuestionIndex];
         this.userAnswer = null;
         this.gameState = 'playing';
+        console.log(`🎯 DEBUG: Question ${this.currentQuestionIndex + 1} correct answer is index ${this.currentQuestion.correctAnswer}`);
         return this.currentQuestion;
     }
 
@@ -2864,9 +2871,23 @@ class GameEngine {
         }
 
         this.userAnswer = answerIndex;
+        const isCorrect = answerIndex === this.currentQuestion.correctAnswer;
+        const mode = this.getMetadata().mode || 'hard';
+
+        // In easy mode, if the answer is incorrect, we don't advance the game state.
+        // We just provide feedback that the answer was wrong.
+        if (mode === 'easy' && !isCorrect) {
+            return {
+                correct: false,
+                correctAnswerIndex: this.currentQuestion.correctAnswer,
+                userAnswerText: this.currentQuestion.choices[answerIndex],
+                explanation: 'That wasn\'t correct. Try another answer!',
+                mode: 'easy'
+            };
+        }
+        
         this.answered++;
         
-        const isCorrect = answerIndex === this.currentQuestion.correctAnswer;
         if (isCorrect) {
             this.score++;
         }
@@ -2878,7 +2899,8 @@ class GameEngine {
             correctAnswerIndex: this.currentQuestion.correctAnswer,
             correctAnswerText: this.currentQuestion.choices[this.currentQuestion.correctAnswer],
             userAnswerText: this.currentQuestion.choices[answerIndex],
-            explanation: this.currentQuestion.explanation
+            explanation: this.currentQuestion.explanation,
+            mode: mode
         };
     }
 
@@ -3246,19 +3268,31 @@ class UIController {
     selectAnswer(answerIndex) {
         console.log(`selectAnswer called with index: ${answerIndex}`);
         
-        // Disable all choice buttons
-        const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
-        buttons.forEach(button => button.disabled = true);
-
-        // Submit answer and get result
         const result = this.game.submitAnswer(answerIndex);
         console.log('Answer submitted, result:', result);
+
+        const buttons = this.elements.choicesContainer.querySelectorAll('.choice-button');
+        const selectedButton = buttons[answerIndex];
+
+        // Easy mode, incorrect answer: just mark it red and stop.
+        if (result.mode === 'easy' && !result.correct) {
+            selectedButton.classList.add('incorrect');
+            selectedButton.disabled = true; // Prevent clicking the same wrong answer
+            console.log('Easy mode, incorrect answer. Allowing another try.');
+            return; // Stop here, don't show result screen
+        }
+
+        // Hard mode OR Correct answer in easy mode: proceed to result screen.
+        
+        // Disable all choice buttons
+        buttons.forEach(button => button.disabled = true);
         
         // Highlight correct and incorrect answers
         buttons.forEach((button, index) => {
             if (index === result.correctAnswerIndex) {
                 button.classList.add('correct');
             } else if (index === answerIndex && !result.correct) {
+                // This case only happens in hard mode now
                 button.classList.add('incorrect');
             }
         });

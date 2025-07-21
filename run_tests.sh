@@ -6,7 +6,7 @@
 TESTS_DIR="./tests"
 OUTPUT_DIR="./test_output"
 UNIT_TEST_PATTERN="unit_test*.py"
-INTEGRATION_TEST_PATTERN="integration_test*.py"
+INTEGRATION_TEST_PATTERN="integration_test_*.py"
 
 # Colors for output
 RED='\033[0;31m'
