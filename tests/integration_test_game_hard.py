@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Puppeteer tests for Democracy Education Game
-Tests the complete game flow and functionality
+Puppeteer tests for Democracy Education Game in Hard Mode
 """
 
 import asyncio
