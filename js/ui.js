@@ -180,6 +180,19 @@ class UIController {
                     tile.appendChild(title);
                     tile.appendChild(description);
 
+                    // Add hover events to show description below tiles
+                    tile.addEventListener('mouseenter', () => {
+                        if (this.elements.gameDescription) {
+                            this.elements.gameDescription.textContent = metadata.description || 'A set of questions on this topic.';
+                        }
+                    });
+                    
+                    tile.addEventListener('mouseleave', () => {
+                        if (this.elements.gameDescription) {
+                            this.elements.gameDescription.textContent = 'Select a topic to begin.';
+                        }
+                    });
+
                     tile.addEventListener('click', () => this.startGame(key));
 
                     this.elements.questionSetTilesContainer.appendChild(tile);

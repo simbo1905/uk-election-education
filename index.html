@@ -2241,9 +2241,9 @@
         
         // Build information
         window.BUILD_INFO = {
-            timestamp: "2025-07-21T19:16:32.725343",
-            timestampUnix: 1753121792,
-            version: "git-5da2d5f"
+            timestamp: "2025-07-21T19:50:06.212138",
+            timestampUnix: 1753123806,
+            version: "git-adf1ebb"
         };
         
         // Debug logging
@@ -2611,29 +2611,22 @@ body {
 }
 
 .tile-description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(102, 126, 234, 0.95);
-    color: white;
-    padding: 20px;
-    font-size: 1rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: none; /* Hide descriptions inside tiles - they'll show below instead */
 }
 
 .question-set-tile:hover .tile-title {
-    opacity: 0;
+    /* Keep title visible on hover - no text changes in tiles */
 }
 
-.question-set-tile:hover .tile-description {
-    opacity: 1;
+/* Fixed height for description to prevent tile jiggling */
+#game-description {
+    min-height: 4.2em; /* Reserve space for up to 3 lines of text */
+    line-height: 1.4;
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    color: #666;
+    overflow: hidden; /* Prevent text from extending beyond reserved space */
 }
 
 /* Game Info (removed from original design) */
@@ -2709,12 +2702,14 @@ body {
         <div class="screen" id="start-screen" style="display: none;">
             <div class="start-content">
                 <h1 id="game-title">UK Democracy Education Game</h1>
-                <p id="game-description">Select a topic to begin.</p>
                 
                 <!-- Question Set Tiles -->
                 <div id="question-set-tiles" class="question-set-tiles-container">
                     <!-- Tiles will be dynamically inserted here -->
                 </div>
+                
+                <!-- Description appears below tiles and changes on hover -->
+                <p id="game-description">Select a topic to begin.</p>
             </div>
         </div>
         
@@ -2769,7 +2764,7 @@ body {
     
     <!-- Build info footer -->
     <div class="build-info">
-        <small>vgit-5da2d5f • Built: 2025-07-21T19:16:32</small>
+        <small>vgit-adf1ebb • Built: 2025-07-21T19:50:06</small>
     </div>
     
     <!-- Embedded JavaScript -->
@@ -3166,6 +3161,19 @@ class UIController {
 
                     tile.appendChild(title);
                     tile.appendChild(description);
+
+                    // Add hover events to show description below tiles
+                    tile.addEventListener('mouseenter', () => {
+                        if (this.elements.gameDescription) {
+                            this.elements.gameDescription.textContent = metadata.description || 'A set of questions on this topic.';
+                        }
+                    });
+                    
+                    tile.addEventListener('mouseleave', () => {
+                        if (this.elements.gameDescription) {
+                            this.elements.gameDescription.textContent = 'Select a topic to begin.';
+                        }
+                    });
 
                     tile.addEventListener('click', () => this.startGame(key));
 
